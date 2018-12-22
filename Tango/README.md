@@ -46,8 +46,10 @@ Im LCD4Linux Menü dazu auf PNG stellen.
 
 http://BoxIP/lcd4linux.html
 
-Per USB ist die Helligkeit der Samsung SPF Display nicht regelbar.
+Per USB ist die Helligkeit der Samsung SPF Displays nicht regelbar.
+
 Deswegen werden in Layer 0 transparente Bilder vorgelegt,
+
 in Abhängigkeit der eingestellten Helligkeit im LCD4Linux Menü.
 
 

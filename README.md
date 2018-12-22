@@ -14,8 +14,10 @@ www.neutrino-images.de
 
 Hintergrundbilder wurden von <Fred_Feuerstein> erstellt.
 
-Per USB ist die Helligkeit der Samsung SPF Display nicht regelbar.
+Per USB ist die Helligkeit der Samsung SPF Displays nicht regelbar.
+
 Deswegen werden in Layer 0 transparente Bilder vorgelegt,
+
 in Abhängigkeit der eingestellten Helligkeit im LCD4Linux Menü.
 
 
