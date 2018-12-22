@@ -27,6 +27,7 @@ SPF-83H, SPF-85H, SPF-86H, SPF-86P, SPF-700T
 #----------------------------------------------------
 
 Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
+
 Die config Dateien sind passend für das Tango Neutrino-Image
 
 Receiver AX/Mutant 4K HD51
@@ -42,6 +43,7 @@ www.neutrino-images.de
 Hintergrundbilder wurden von <Fred_Feuerstein> erstellt.
 
 Zur Kontrolle kann man die Darstellungen im PNG Style im Webinterface darstellen.
+
 Im LCD4Linux Menü dazu auf PNG stellen.
 
 http://BoxIP/lcd4linux.html
