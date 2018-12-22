@@ -1,4 +1,4 @@
-# SamsungLCD4Linux
+# SamsungLCD4Linux Tangoversion
 
 Samsung LCD Displayeinstellungen
 
