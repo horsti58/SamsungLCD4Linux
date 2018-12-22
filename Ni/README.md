@@ -3,15 +3,23 @@
 Samsung LCD Displayeinstellungen
 
 800x480
+
 SPF-72H, SPF-75H, SPF-76H, SPF-87H, SPF-87H-v2
 
+#----------------------------------------------------
+
 800x600
+
 SPF-83H, SPF-85H, SPF-86H, SPF-86P, SPF-700T 
 
-Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
-Die config Dateien sind passend für das Neutrino Ni Image (Receiver AX 4K HD51, CST Tank usw.)
+#----------------------------------------------------
 
-Ideen, Vorlagen und Bilder sind von verschiedenen Quellen:
+Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
+Die config Dateien sind passend für das Ni Neutrino-Image
+
+Receiver AX/Mutant 4K HD51, CST Tank, ZEE², Link usw.)
+
+Ideen, Vorlagen und Bilder Quellen:
 
 www.neutrino-images.de
 

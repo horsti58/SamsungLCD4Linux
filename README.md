@@ -1,11 +1,13 @@
-# SamsungLCD4Linux 
+# SamsungLCD4Linux
 
 Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
-Die config Dateien sind passend für Neutrino Images
-Tango:  Receiver AX 4K HD51
-Ni:     Receiver AX 4K HD51, CST
+Die config Dateien sind passend für folgende Neutrino-Images
 
-Ideen, Vorlagen und Bilder sind von verschiedenen Quellen:
+Tango:  Receiver AX/Mutant 4K HD51
+
+Ni:     Receiver AX/Mutant 4K HD51, CST
+
+Ideen, Vorlagen und Bilder Quellen:
 
 www.neutrino-images.de
 
