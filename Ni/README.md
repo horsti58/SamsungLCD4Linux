@@ -2,7 +2,7 @@
 
 Samsung LCD Displayeinstellungen
 
-800x480 (in Vorbereitung)
+800x480
 SPF-72H, SPF-75H, SPF-76H, SPF-87H, SPF-87H-v2
 
 800x600
