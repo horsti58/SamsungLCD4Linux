@@ -11,11 +11,11 @@ SPF-83H, SPF-85H, SPF-86H, SPF-86P, SPF-700T
 Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
 Die config Dateien sind passend für das Neutrino Ni Image (Receiver AX 4K HD51, CST Tank usw.)
 
-Idee, Vorlagen und Bilder sind von verschiedenen Quellen:
+Ideen, Vorlagen und Bilder sind von verschiedenen Quellen:
 
 www.neutrino-images.de
 
-Hintergrundbilder wurden von < Fred_Feuerstein > erstellt.
+Hintergrundbilder wurden von <Fred_Feuerstein> erstellt.
 
 Per USB ist die Helligkeit der Samsung SPF Display nicht regelbar.
 Deswegen werden in Layer 0 transparente Bilder vorgelegt,

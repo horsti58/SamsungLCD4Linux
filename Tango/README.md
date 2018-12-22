@@ -20,11 +20,11 @@ Die config Dateien sind passend für das Neutrino Image (Receiver AX 4K HD51) vo
 https://github.com/TangoCash
 https://github.com/TangoCash/lcd4linux diese Version kann 5 Layer darstellen
 
-Idee, Vorlagen und Bilder sind von verschiedenen Quellen:
+Ideen, Vorlagen und Bilder sind von verschiedenen Quellen:
 
 www.neutrino-images.de
 
-Viele Hintergrundbilder wurden von < Fred_Feuerstein > erstellt.
+Hintergrundbilder wurden von <Fred_Feuerstein> erstellt.
 
 Zur Kontrolle kann man die Darstellungen im PNG Style im Webinterface darstellen.
 Im LCD4Linux Menü dazu auf PNG stellen.
