@@ -5,7 +5,7 @@ Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Display
 Die config Dateien sind passend für folgende Neutrino-Images
 
 Tango:  Receiver AX/Mutant 4K HD51
-
+Tuxbox: Receiver AX/Mutant 4K HD51
 Ni:     Receiver AX/Mutant 4K HD51, CST
 
 Ideen, Vorlagen und Bilder Quellen:

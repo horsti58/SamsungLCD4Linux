@@ -14,14 +14,8 @@ SPF-83H, SPF-85H, SPF-86H, SPF-86P, SPF-700T
 
 #----------------------------------------------------
 
-1024x600
-
-SPF-105P, SPF-107H, SPF-107H-v2, SPF-1000P
-
-#----------------------------------------------------
-
 Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
-Die config Dateien sind passend für das Ni Neutrino-Image ab 2019 (sonst ni_old nehmen) !!!!
+Die config Dateien sind passend für das Ni Neutrino-Image bis 2018 !!!!
 
 Receiver AX/Mutant 4K HD51, CST Tank, ZEE², Link usw.)
 
