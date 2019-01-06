@@ -1114,7 +1114,7 @@ Widget S_TTF-CHANNEL {
 	class		'Truetype'
 	expression	file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1)
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	width		780
@@ -1126,7 +1126,7 @@ Widget S_TTF-CHANNEL1 {
 	class		'Truetype'
 	expression	(file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1))
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	width		950
@@ -1150,7 +1150,7 @@ Widget S_START {
 Widget S_END {
 	class		'Truetype'
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'58585800'
 	size		0
 	height		50
 	width		140
@@ -1178,7 +1178,7 @@ Widget S_TTF-EPG-NOW1 {
 	class		'Truetype'
 	expression	file::readline('/tmp/lcd/event', 1)
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'fd6d1300'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	width		790
@@ -1190,7 +1190,7 @@ Widget S_TTF-EPG-NEXT {
 	class		'Truetype'
 	expression	file::readline('/tmp/lcd/event', 2)
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	inverted	0
@@ -1204,7 +1204,7 @@ Widget S_TTF-EPG-NEXT1 {
 	class		'Truetype'
 	expression	file::readline('/tmp/lcd/event', 2)
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	width		790
@@ -1263,7 +1263,7 @@ Widget S_EPGBAR2 {
 Widget HST {
 	class		'Truetype'
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'585858'
 	width		30
 	height		20
 	align		'L'
@@ -1275,7 +1275,7 @@ Widget HST {
 Widget HST_STB {
 	class		'Truetype'
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'585858'
 	width		30
 	height		20
 	align		'L'
@@ -1287,7 +1287,7 @@ Widget HST_STB {
 Widget RES800x480 {
 	class		'Truetype'
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'585858'
 	width		90
 	height		20
 	align		'R'
@@ -1298,7 +1298,7 @@ Widget RES800x480 {
 Widget RES800x600 {
 	class		'Truetype'
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'585858'
 	width		90
 	height		20
 	align		'R'
@@ -1309,7 +1309,7 @@ Widget RES800x600 {
 Widget RES1024x600 {
 	class		'Truetype'
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'585858'
 	width		100
 	height		20
 	align		'R'
@@ -1404,7 +1404,7 @@ Widget TAGDATUM-TTF {
 	class	'truetype'
 	expression	(strftime('%u', time()) == 1 ? 'Montag' : (strftime('%u', time()) == 2 ? 'Dienstag' : (strftime('%u', time()) == 3 ? 'Mittwoch' : (strftime('%u', time()) == 4 ? 'Donnerstag' : (strftime('%u', time()) == 5 ? 'Freitag' : (strftime('%u', time()) == 6 ? 'Samstag' : 'Sonntag')))))) . ', ' . strftime('%d.%m.%Y', time())
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'58585800'
 	align	'C'
 	width	800
 	height	75
@@ -1417,7 +1417,7 @@ Widget TAGDATUM-TTF1 {
 	class	'truetype'
 expression	(strftime('%u', time()) == 1 ? 'Montag' : (strftime('%u', time()) == 2 ? 'Dienstag' : (strftime('%u', time()) == 3 ? 'Mittwoch' : (strftime('%u', time()) == 4 ? 'Donnerstag' : (strftime('%u', time()) == 5 ? 'Freitag' : (strftime('%u', time()) == 6 ? 'Samstag' : 'Sonntag')))))) . ', ' . strftime('%d.%m.%Y', time())
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		'78787800'
+	fcolor		'58585800'
 	align	'C'
 	width	1000
 	height	75
@@ -1717,15 +1717,15 @@ Layout Samsung800x600_standard {
 		X1.Y1 'S800x600_BG1'
 	}
 	Layer 1 {
-		X15.Y220 'S_TIMER'
-		X15.Y360 'S_REC'
-		X15.Y470 'S_TS'
-		X15.Y560 'S_ECM'
+		X17.Y220 'S_TIMER'
+		X17.Y360 'S_REC'
+		X17.Y470 'S_TS'
+		X17.Y560 'S_ECM'
 		X70.Y10 'S_LOGO'
-		X260.Y10 'S_START'
-		X260.Y155 'S_TTF-EPG-NOW'
-		X320.Y155 'S_TTF-EPG-NEXT'
-		X320.Y10 'S_END'
+		X260.Y20 'S_START'
+		X260.Y165 'S_TTF-EPG-NOW'
+		X320.Y165 'S_TTF-EPG-NEXT'
+		X320.Y20 'S_END'
 		X480.Y125 'S_HOUR1_'
 		X480.Y190 'S_HOUR_1'
 		X480.Y254 'S_DP'
@@ -1754,10 +1754,10 @@ Layout Samsung800x480_standard {
 		X10.Y470 'S_TS'
 		X10.Y560 'S_ECM'
 		X40.Y10 'S_LOGO'
-		X205.Y10 'S_START'
-		X205.Y155 'S_TTF-EPG-NOW'
-		X260.Y155 'S_TTF-EPG-NEXT'
-		X260.Y10 'S_END'
+		X205.Y20 'S_START'
+		X205.Y165 'S_TTF-EPG-NOW'
+		X260.Y165 'S_TTF-EPG-NEXT'
+		X260.Y20 'S_END'
 		X380.Y125 'S_HOUR1_'
 		X380.Y190 'S_HOUR_1'
 		X380.Y255 'S_DP'
@@ -1786,10 +1786,10 @@ Layout Samsung1024x600_standard {
 		X13.Y470 'S_TS'
 		X13.Y560 'S_ECM'
 		X60.Y10 'S_LOGO1'
-		X260.Y10 'S_START'
-		X260.Y180 'S_TTF-EPG-NOW1'
-		X320.Y180 'S_TTF-EPG-NEXT1'
-		X320.Y10 'S_END'
+		X260.Y20 'S_START'
+		X260.Y190 'S_TTF-EPG-NOW1'
+		X320.Y190 'S_TTF-EPG-NEXT1'
+		X320.Y20 'S_END'
 		X480.Y130 'S_HOUR1_'
 		X480.Y195 'S_HOUR_1'
 		X480.Y260 'S_DP'
@@ -1921,15 +1921,15 @@ Layout Samsung800x600_radio {
 		X1.Y1 'S800x600_BG1'
 	}
 	Layer 1 {
-		X15.Y220 'S_TIMER'
-		X15.Y360 'S_REC'
-		X15.Y470 'S_TS'
-		X15.Y560 'S_ECM'
+		X17.Y220 'S_TIMER'
+		X17.Y360 'S_REC'
+		X17.Y470 'S_TS'
+		X17.Y560 'S_ECM'
 		X70.Y10 'S_LOGO'
-		X260.Y10 'S_START'
-		X260.Y155 'S_TTF-EPG-NOW'
-		X320.Y155 'S_TTF-EPG-NEXT'
-		X320.Y10 'S_END'
+		X260.Y20 'S_START'
+		X260.Y165 'S_TTF-EPG-NOW'
+		X320.Y165 'S_TTF-EPG-NEXT'
+		X320.Y20 'S_END'
 		X480.Y125 'S_HOUR1_'
 		X480.Y190 'S_HOUR_1'
 		X480.Y254 'S_DP'
@@ -1958,10 +1958,10 @@ Layout Samsung800x480_radio {
 		X10.Y470 'S_TS'
 		X10.Y560 'S_ECM'
 		X40.Y10 'S_LOGO'
-		X205.Y10 'S_START'
-		X205.Y155 'S_TTF-EPG-NOW'
-		X260.Y155 'S_TTF-EPG-NEXT'
-		X260.Y10 'S_END'
+		X205.Y20 'S_START'
+		X205.Y165 'S_TTF-EPG-NOW'
+		X260.Y165 'S_TTF-EPG-NEXT'
+		X260.Y20 'S_END'
 		X380.Y125 'S_HOUR1_'
 		X380.Y190 'S_HOUR_1'
 		X380.Y255 'S_DP'
@@ -1990,10 +1990,10 @@ Layout Samsung1024x600_radio {
 		X13.Y470 'S_TS'
 		X13.Y560 'S_ECM'
 		X60.Y10 'S_LOGO1'
-		X260.Y10 'S_START'
-		X260.Y180 'S_TTF-EPG-NOW1'
-		X320.Y180 'S_TTF-EPG-NEXT1'
-		X320.Y10 'S_END'
+		X260.Y20 'S_START'
+		X260.Y190 'S_TTF-EPG-NOW1'
+		X320.Y190 'S_TTF-EPG-NEXT1'
+		X320.Y20 'S_END'
 		X480.Y130 'S_HOUR1_'
 		X480.Y195 'S_HOUR_1'
 		X480.Y260 'S_DP'
