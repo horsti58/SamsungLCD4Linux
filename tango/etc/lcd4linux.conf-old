@@ -66,7 +66,7 @@ Display Pearl_standard_standby {
 	backlight	file::readline('/tmp/lcd/brightness_standby', 1)
 }
 
-Display Pearl_user04 {
+Display Pearl_oscam {
 	driver		'DPF'
 	port		'usb0'
 	font		'6x9'
@@ -82,20 +82,6 @@ Display PNG_standard {
 	driver 'Image'
 	format 'PNG'
 	font '20x40'
-	size '800x600'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-Display PNG_user04 {
-	driver 'Image'
-	format 'PNG'
-	font '15x24'
 	size '800x600'
 	pixel '1+0'
 	gap '0x0'
@@ -134,7 +120,7 @@ Display Samsung800x600_standard {
 	orientation	1
 }
 
-Display Samsung800x600_user04 {
+Display Samsung800x600_oscam {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -158,7 +144,7 @@ Display Samsung800x480_standard {
 	orientation	1
 }
 
-Display Samsung800x480_user04 {
+Display Samsung800x480_oscam {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -182,7 +168,7 @@ Display Samsung1024x600_standard {
 	orientation	1
 }
 
-Display Samsung1024x600_user04 {
+Display Samsung1024x600_oscam {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -1631,7 +1617,7 @@ Layout Pearl_standard_standby {
 	}
 }
 
-Layout Pearl_user04 {
+Layout Pearl_oscam {
 	layer 0 {
 		row01.col01	'OSCamLINE02'
 		row02.col01	'OSCamLINE03'
@@ -1658,7 +1644,6 @@ Layout Pearl_user04 {
 		row23.col01	'OSCamLINE26'
 		row24.col01	'OSCamLINE27'
 		row25.col01	'OSCamLINE28'
-		X220.Y5 'HST'
 	}
 	layer 1 {
 		x001.y001	'Pearl_OSCAM'
@@ -1698,44 +1683,6 @@ Layout PNG_standard {
 		X1.Y1 'PNG_STANDARD_BG'
 	}
 }
-
-Layout PNG_user04 {
-	Layer 0 {
-		X1.Y1 'S800x600_BG1'
-	}
-	layer 1 {
-		row01.col01	'OSCamLINE02'
-		row02.col01	'OSCamLINE03'
-		row03.col01	'OSCamLINE06'
-		row04.col01	'OSCamLINE07'
-		row05.col01	'OSCamLINE08'
-		row06.col01	'OSCamLINE09'
-		row07.col01	'OSCamLINE10'
-		row08.col01	'OSCamLINE11'
-		row09.col01	'OSCamLINE12'
-		row10.col01	'OSCamLINE13'
-		row11.col01	'OSCamLINE14'
-		row12.col01	'OSCamLINE15'
-		row13.col01	'OSCamLINE16'
-		row14.col01	'OSCamLINE17'
-		row15.col01	'OSCamLINE18'
-		row16.col01	'OSCamLINE19'
-		row17.col01	'OSCamLINE20'
-		row18.col01	'OSCamLINE21'
-		row19.col01	'OSCamLINE22'
-		row20.col01	'OSCamLINE23'
-		row21.col01	'OSCamLINE24'
-		row22.col01	'OSCamLINE25'
-		row23.col01	'OSCamLINE26'
-		row24.col01	'OSCamLINE27'
-		row25.col01	'OSCamLINE28'
-		X580.Y5 'HST'
-	}
-	Layer 2 {
-		X1.Y1 'S800x600_OSCAM'
-	}
-}
-
 
 Layout PNG_standard_radio {
 	Layer 0 {
@@ -1890,7 +1837,7 @@ Layout Samsung1024x600_standard {
 	}
 }
 
-Layout Samsung800x600_user04 {
+Layout Samsung800x600_oscam {
 	Layer 0 {
 		X1.Y1 'S800x600_BG1'
 	}
@@ -1920,14 +1867,13 @@ Layout Samsung800x600_user04 {
 		row23.col01	'OSCamLINE26'
 		row24.col01	'OSCamLINE27'
 		row25.col01	'OSCamLINE28'
-		X580.Y5 'HST'
 	}
 	Layer 2 {
 		X1.Y1 'S800x600_OSCAM'
 	}
 }
 
-Layout Samsung800x480_user04 {
+Layout Samsung800x480_oscam {
 	Layer 0 {
 		X1.Y1 'S800x480_BG1'
 	}
@@ -1957,14 +1903,13 @@ Layout Samsung800x480_user04 {
 		row23.col01	'OSCamLINE26'
 		row24.col01	'OSCamLINE27'
 		row25.col01	'OSCamLINE28'
-		X460.Y5 'HST'
 	}
 	Layer 2 {
 		X1.Y1 'S800x480_OSCAM'
 	}
 }
 
-Layout Samsung1024x600_user04 {
+Layout Samsung1024x600_oscam {
 	Layer 0 {
 		X1.Y1 'S1024x600_BG1'
 	}
@@ -1994,7 +1939,6 @@ Layout Samsung1024x600_user04 {
 		row23.col01	'OSCamLINE26'
 		row24.col01	'OSCamLINE27'
 		row25.col01	'OSCamLINE28'
-		X580.Y5 'HST'
 	}
 	Layer 2 {
 		X1.Y1 'S1024x600_OSCAM'
