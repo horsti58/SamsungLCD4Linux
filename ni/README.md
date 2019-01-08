@@ -1,4 +1,4 @@
-# SamsungLCD4Linux Ni Version
+# LCD4Linux Ni Version
 
 Samsung LCD Displayeinstellungen
 
@@ -20,8 +20,16 @@ SPF-105P, SPF-107H, SPF-107H-v2, SPF-1000P
 
 #----------------------------------------------------
 
-Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
-Die config Dateien sind passend für das Ni Neutrino-Image ab 2019 (sonst ni_old nehmen) !!!!
+Pearl LCD Displayeinstellungen
+
+320x240
+
+DPF
+
+#----------------------------------------------------
+
+Dies ist eine Sammlung von config Dateien für LCD4Linux und LCD Displays.
+Die config Dateien sind passend für das Ni Neutrino-Image ab 08.01.2019 (sonst ni_old nehmen) !!!!
 
 Receiver AX/Mutant 4K HD51, CST Tank, ZEE², Link usw.)
 
