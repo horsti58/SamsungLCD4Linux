@@ -1,27 +1,33 @@
-# SamsungLCD4Linux Tango/Tuxbox Version
+# LCD4Linux Tango Version
 
-Samsung LCD Displayeinstellungen
+LCD Displayeinstellungen
 
-800x480
+Samsung 800x480
 
 SPF-72H, SPF-75H, SPF-76H, SPF-87H, SPF-87H-v2
 
 #----------------------------------------------------
 
-800x600
+Samsung 800x600
 
 SPF-83H, SPF-85H, SPF-86H, SPF-86P, SPF-700T 
 
 #----------------------------------------------------
 
-1024x600
+Samsung 1024x600
 
 SPF-105P, SPF-107H, SPF-107H-v2, SPF-1000P
 
 #----------------------------------------------------
 
+Pearl 320x240
+
+DPF and compatible
+
+#----------------------------------------------------
+
 Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
-Die config Dateien sind passend für das Tango Neutrino-Image ab 2019 (sonst tango_old nehmen) !!!!
+Die config Dateien sind passend für das Tango Neutrino-Image ab 2019 !!!!
 
 Receiver AX/Mutant 4K HD51
 

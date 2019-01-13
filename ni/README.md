@@ -29,7 +29,7 @@ DPF
 #----------------------------------------------------
 
 Dies ist eine Sammlung von config Dateien für LCD4Linux und LCD Displays.
-Die config Dateien sind passend für das Ni Neutrino-Image ab 08.01.2019 (sonst ni_old nehmen) !!!!
+Die config Dateien sind passend für das Ni Neutrino-Image ab 08.01.2019 !!!!
 
 Receiver AX/Mutant 4K HD51, CST Tank, ZEE², Link usw.)
 
