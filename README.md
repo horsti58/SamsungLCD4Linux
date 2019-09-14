@@ -20,4 +20,5 @@ Deswegen werden in Layer 0 transparente Bilder vorgelegt,
 
 in Abhängigkeit der eingestellten Helligkeit im LCD4Linux Menü.
 
+14.09.2019
 
