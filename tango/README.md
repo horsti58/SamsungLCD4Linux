@@ -29,7 +29,7 @@ DPF and compatible
 Dies ist eine Sammlung von config Dateien für LCD4Linux und Samsung SPF Displays.
 Die config Dateien sind passend für das Tango Neutrino-Image ab 2019 !!!!
 
-Receiver AX/Mutant 4K HD51
+Receiver AX/Mutant 4K HD51, BRE2ZE4K
 
 Ideen, Vorlagen und Bilder Quellen:
 
