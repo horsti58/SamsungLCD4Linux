@@ -1436,15 +1436,6 @@ Widget S_ECM {
 	scale		300
 }
 
-Widget S_CI {
-	class		'Image'
-	file		ICONS . 'mode/ci_' . file::readline('/tmp/lcd/mode_cam', 1) . '.png'
-	update		4000
-	reload		1
-	align		'R'
-	scale		300
-}
-
 Widget S_LOGO {
 	class		'Image'
 	file		file::readline('/tmp/lcd/logo', 1)
@@ -1826,7 +1817,6 @@ Layout Samsung800x600_standard {
 		X17.Y360	'S_REC'
 		X17.Y470	'S_TS'
 		X17.Y560	'S_ECM'
-        X17.Y660	'S_CI'
 		X70.Y10		'S_LOGO'
 		X260.Y20	'S_START'
 		X260.Y165	'S_TTF-EPG-NOW'
@@ -1862,7 +1852,6 @@ Layout Samsung800x480_standard {
 		X10.Y360	'S_REC'
 		X10.Y470	'S_TS'
 		X10.Y560	'S_ECM'
-        X10.Y660	'S_CI'
 		X40.Y10		'S_LOGO'
 		X205.Y20	'S_START'
 		X205.Y165	'S_TTF-EPG-NOW'
@@ -1898,7 +1887,6 @@ Layout Samsung1024x600_standard {
 		X13.Y360	'S_REC'
 		X13.Y470	'S_TS'
 		X13.Y560	'S_ECM'
-        X13.Y660	'S_CI'
 		X60.Y10		'S_LOGO1'
 		X260.Y20	'S_START'
 		X260.Y190	'S_TTF-EPG-NOW1'
@@ -1934,7 +1922,6 @@ Layout Samsung800x600_radio {
 		X17.Y360	'S_REC'
 		X17.Y470	'S_TS'
 		X17.Y560	'S_ECM'
-        X17.Y660	'S_CI'
 		X70.Y10		'S_LOGO'
 		X260.Y20	'S_START'
 		X260.Y165	'S_TTF-EPG-NOW'
@@ -1970,7 +1957,6 @@ Layout Samsung800x480_radio {
 		X10.Y360	'S_REC'
 		X10.Y470	'S_TS'
 		X10.Y560	'S_ECM'
-        X10.Y660	'S_CI'
 		X40.Y10		'S_LOGO'
 		X205.Y20	'S_START'
 		X205.Y165	'S_TTF-EPG-NOW'
@@ -2006,7 +1992,6 @@ Layout Samsung1024x600_radio {
 		X13.Y360	'S_REC'
 		X13.Y470	'S_TS'
 		X13.Y560	'S_ECM'
-        X13.Y660	'S_CI'
 		X60.Y10		'S_LOGO1'
 		X260.Y20	'S_START'
 		X260.Y190	'S_TTF-EPG-NOW1'
@@ -2156,7 +2141,6 @@ Layout Samsung800x600_standby {
 		X17.Y360	 'S_REC'
 		X17.Y470	 'S_TS'
 		X17.Y560	 'S_ECM'
-        X17.Y660     'S_CI'
 		X70.Y0		 'TAGDATUM-TTF'
 		X160.Y123	 'S_STANDBY_HOUR1_'
 		X160.Y244	 'S_STANDBY_HOUR_1'
@@ -2195,7 +2179,6 @@ Layout Samsung800x480_standby {
 		X10.Y360	'S_REC'
 		X10.Y470	'S_TS'
 		X10.Y560	'S_ECM'
-        X10.Y660	'S_CI'
 		X70.Y0		'TAGDATUM-TTF'
 		X160.Y123	'S_STANDBY_HOUR1_'
 		X160.Y244	'S_STANDBY_HOUR_1'
@@ -2222,7 +2205,6 @@ Layout Samsung1024x600_standby {
 		X10.Y370	'S_REC'
 		X10.Y480	'S_TS'
 		X10.Y570	'S_ECM'
-        X10.Y660	'S_CI'
 		X70.Y12		'TAGDATUM-TTF1'
 		X160.Y230	'S_STANDBY_HOUR1_'
 		X160.Y354	'S_STANDBY_HOUR_1'
