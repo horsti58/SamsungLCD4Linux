@@ -1436,13 +1436,53 @@ Widget S_ECM {
 	scale		300
 }
 
-Widget S_SOFTCAM {
+Widget DOSCAM {
 	class		'Image'
-	file		ICONS . 'mode/cam_' . file::readline('/tmp/lcd/mode_softcam', 1) . '.png'
-	update		4000
+	file		file::exist(DOSCAM) == 0 ? ICONS . 'blank.png' : '/usr/share/tuxbox/neutrino/icons/doscam_green.png'
+	align		'L'
 	reload		1
-	align		'R'
-	scale		300
+}
+
+Widget OSCAM {
+	class		'Image'
+	file		file::exist(OSCAM) == 0 ? ICONS . 'blank.png' : '/usr/share/tuxbox/neutrino/icons/oscam_green.png'
+	align		'L'
+	reload		1
+}
+
+Widget OSMOD {
+	class		'Image'
+	file		file::exist(OSMOD) == 0 ? ICONS . 'blank.png' : '/usr/share/tuxbox/neutrino/icons/osmod_green.png'
+	align		'L'
+	reload		1
+}
+
+Widget MGCAMD {
+	class		'Image'
+	file		file::exist(MGCAMD) == 0 ? ICONS . 'blank.png' : '/usr/share/tuxbox/neutrino/icons/mgcamd_green.png'
+	align		'L'
+	reload		1
+}
+
+Widget NCAM {
+	class		'Image'
+	file		file::exist(NCAM) == 0 ? ICONS . 'blank.png' : '/usr/share/tuxbox/neutrino/icons/ncam_green.png'
+	align		'L'
+	reload		1
+}
+
+Widget CCCAM {
+	class		'Image'
+	file		file::exist(CCCAM) == 0 ? ICONS . 'blank.png' : '/usr/share/tuxbox/neutrino/icons/cccam_green.png'
+	align		'L'
+	reload		1
+}
+
+Widget GBOX {
+	class		'Image'
+	file		file::exist(GBOX) == 0 ? ICONS . 'blank.png' : '/usr/share/tuxbox/neutrino/icons/gbox_green.png'
+	align		'L'
+	reload		1
 }
 
 Widget S_ECM {
@@ -1840,12 +1880,11 @@ Layout Samsung800x600_standard {
 		X1.Y1		'S800x600_BG1'
 	}
 	Layer 1 {
-		X17.Y180	'S_TIMER'
-		X17.Y305	'S_REC'
-		X17.Y400	'S_TS'
-		X17.Y475	'S_ECM'
-        X17.Y560	'S_CI'
-        X17.Y650	'S_SOFTCAM'
+		X18.Y220	'S_TIMER'
+		X18.Y360	'S_REC'
+		X18.Y470	'S_TS'
+		X18.Y560	'S_ECM'
+        X18.Y660	'S_CI'
 		X70.Y10		'S_LOGO'
 		X260.Y20	'S_START'
 		X260.Y165	'S_TTF-EPG-NOW'
@@ -1861,6 +1900,13 @@ Layout Samsung800x600_standard {
 		X540.Y290   'S_WEATHER_CITY'
 		X510.Y630	'S_DURATION'
 		X580.Y1		'HST'
+		X580.Y35  	'DOSCAM'
+		X580.Y115   'OSCAM'
+		X580.Y195   'OSMOD'
+		X580.Y275   'MGCAMD'
+		X580.Y355   'NCAM'
+		X580.Y435   'CCCAM'
+		X580.Y515   'GBOX'
 		X580.Y710	'RES800x600'
 	}
 	Layer 2 {
@@ -2279,6 +2325,13 @@ Variables {
 	FWEATHER	'/var/etc/.lcd-weather'
 	FCLOCK		'/var/etc/.lcd-clock_a'
 	FXCAM		'/var/etc/.lcd-xcam'
+	OSCAM		'/var/etc/.oscam'
+	OSMOD		'/var/etc/.osmod'
+	DOSCAM		'/var/etc/.doscam'
+	NCAM		'/var/etc/.ncam'
+	MGCAMD		'/var/etc/.mgcamd'
+	CCCAM		'/var/etc/.cccam'
+	GBOX		'/var/etc/.gbox'
 	COLOR1		'EEEEEE'
 	COLOR2		'999999'
 	COLOR3		'333333AA'
