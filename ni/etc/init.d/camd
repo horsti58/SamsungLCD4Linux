@@ -1,0 +1,305 @@
+#!/bin/sh
+
+. /etc/init.d/globals
+
+# Camd-Fileflags
+FLAGDIR="/var/etc"
+
+F_OPENVPN=".openvpn"
+
+F_DOSCAM=".doscam"
+F_OSCAM=".oscam"
+F_OSMOD=".osmod"
+F_NCAM=".ncam"
+F_MGCAMD=".mgcamd"
+F_CCCAM=".cccam"
+F_GBOX=".gbox"
+
+doscam_action()
+{
+	case $1 in
+		"start" )
+			SHOWINFO "start camd_datefix"
+			/etc/init.d/camd_datefix start doscam
+			SHOWINFO "start doscam"
+			/var/bin/doscam -b -w0
+			touch /tmp/lcd/mode_softcam
+			echo doscam > /tmp/lcd/mode_softcam
+			if [ -e $FLAGDIR/$F_MGCAMD ]; then
+				sleep 15
+			fi
+		;;
+		"stop" )
+			SHOWINFO "stop camd_datefix"
+			/etc/init.d/camd_datefix stop doscam
+			SHOWINFO "stop doscam"
+			killall doscam
+			sleep 1
+			rm -rf /tmp/lcd/mode_softcam
+			rm -rf /tmp/doscam.*
+			rm -rf /tmp/ecm.info
+		;;
+		* )
+			doscam_action "stop"
+			sleep 1
+			doscam_action "start"
+		;;
+	esac
+}
+
+oscam_action()
+{
+	case $1 in
+		"start" )
+			SHOWINFO "start camd_datefix"
+			/etc/init.d/camd_datefix start oscam
+			SHOWINFO "start oscam"
+			/var/bin/oscam -b
+			touch /tmp/lcd/mode_softcam
+			echo oscam > /tmp/lcd/mode_softcam
+			if [ -e $FLAGDIR/$F_MGCAMD ]; then
+				sleep 15
+			fi
+		;;
+		"stop" )
+			SHOWINFO "stop camd_datefix"
+			/etc/init.d/camd_datefix stop oscam
+			SHOWINFO "stop oscam"
+			killall oscam
+			sleep 1
+			rm -rf /tmp/lcd/mode_softcam
+			rm -rf /tmp/oscam.*
+			rm -rf /tmp/ecm.info
+		;;
+		* )
+			oscam_action "stop"
+			sleep 1
+			oscam_action "start"
+		;;
+	esac
+}
+
+osmod_action()
+{
+	case $1 in
+		"start" )
+			SHOWINFO "start camd_datefix"
+			/etc/init.d/camd_datefix start osmod
+			SHOWINFO "start osmod"
+			/var/bin/osmod -b
+			if [ -e $FLAGDIR/$F_MGCAMD ]; then
+				sleep 15
+			fi
+		;;
+		"stop" )
+			SHOWINFO "stop camd_datefix"
+			/etc/init.d/camd_datefix stop osmod
+			SHOWINFO "stop osmod"
+			killall osmod
+			sleep 1
+			rm -rf /tmp/osmod.*
+			rm -rf /tmp/ecm.info
+		;;
+		* )
+			osmod_action "stop"
+			sleep 1
+			osmod_action "start"
+		;;
+	esac
+}
+
+ncam_action()
+{
+	case $1 in
+		"start" )
+			SHOWINFO "start camd_datefix"
+			/etc/init.d/camd_datefix start ncam
+			SHOWINFO "start ncam"
+			/var/bin/ncam -b
+			if [ -e $FLAGDIR/$F_MGCAMD ]; then
+				sleep 15
+			fi
+		;;
+		"stop" )
+			SHOWINFO "stop camd_datefix"
+			/etc/init.d/camd_datefix stop ncam
+			SHOWINFO "stop ncam"
+			killall ncam
+			sleep 1
+			rm -rf /tmp/ncam.*
+			rm -rf /tmp/ecm.info
+		;;
+		* )
+			ncam_action "stop"
+			sleep 1
+			ncam_action "start"
+		;;
+	esac
+}
+
+mgcamd_action()
+{
+	case $1 in
+		"start" )
+			SHOWINFO "start mgcamd"
+			{ /var/bin/mgcamd; pzapit -rz; }  &
+		;;
+		"stop" )
+			SHOWINFO "stop mgcamd"
+			kill $( cat /tmp/mgcamd.pid )
+			sleep 1
+			rm -rf /tmp/mgstat.info
+			rm -rf /tmp/mgshare.info
+			rm -rf /tmp/ecm.info
+			rm -rf /tmp/pid.info
+			rm -rf /tmp/ca_cache.list
+			rm -rf /tmp/cccam.info
+			rm -rf /tmp/ecm.info
+			rm -rf /tmp/mg.info
+		;;
+		* )
+			mgcamd_action "stop"
+			sleep 1
+			mgcamd_action "start"
+		;;
+	esac
+}
+
+cccam_action()
+{
+	case $1 in
+		"start" )
+			SHOWINFO "start cccam"
+			/var/bin/cccam &
+			sleep 5
+		;;
+		"stop" )
+			SHOWINFO "stop cccam"
+			killall cccam
+		;;
+		* )
+			cccam_action "stop"
+			sleep 1
+			cccam_action "start"
+		;;
+	esac
+}
+
+gbox_action()
+{
+	case $1 in
+		"start" )
+			SHOWINFO "start gbox"
+			/var/bin/gbox &
+			sleep 10
+		;;
+		"stop" )
+			SHOWINFO "stop gbox"
+			touch /tmp/gbox.kill
+			sleep 1
+			rm -rf /tmp/pid.info
+			rm -rf /tmp/ecm.info
+			rm -rf /tmp/gbox.pid
+			rm -rf /tmp/gbox.ver
+			rm -rf /tmp/gbox.kill
+		;;
+		* )
+			gbox_action "stop"
+			sleep 1
+			gbox_action "start"
+		;;
+	esac
+}
+
+check_openvpn()
+{
+	if [ -e $FLAGDIR/$F_OPENVPN ]; then
+		# wait i seconds for openvpn
+		i=10
+		while [ $i -gt 0 ]; do
+			if pidof openvpn > /dev/null; then
+				SHOWINFO "openvpn is started"
+				i=-1 # leave loop
+			else
+				SHOWINFO "wait for openvpn ... $i"
+				sleep 1
+			fi
+			i=$(($i-1))
+			if [ $i = 0 ]; then
+				SHOWINFO "continue without openvpn"
+			fi
+		done
+	fi
+}
+
+camd_action()
+{
+	case $1 in
+		"doscam")
+			doscam_action $ACTION
+		;;
+		"oscam")
+			oscam_action $ACTION
+		;;
+		"osmod")
+			osmod_action $ACTION
+		;;
+		"ncam")
+			ncam_action $ACTION
+		;;
+		"mgcamd")
+			mgcamd_action $ACTION
+		;;
+		"cccam")
+			cccam_action $ACTION
+		;;
+		"gbox")
+			gbox_action $ACTION
+		;;
+		*)
+			if [ -e $FLAGDIR/$F_DOSCAM ]; then
+				doscam_action $ACTION
+			fi
+
+			if [ -e $FLAGDIR/$F_OSCAM ]; then
+				oscam_action $ACTION
+			fi
+
+			if [ -e $FLAGDIR/$F_OSMOD ]; then
+				osmod_action $ACTION
+			fi
+
+			if [ -e $FLAGDIR/$F_NCAM ]; then
+				ncam_action $ACTION
+			fi
+
+			if [ -e $FLAGDIR/$F_MGCAMD ]; then
+				mgcamd_action $ACTION
+			fi
+
+			if [ -e $FLAGDIR/$F_CCCAM ]; then
+				cccam_action $ACTION
+			fi
+
+			if [ -e $FLAGDIR/$F_GBOX ]; then
+				gbox_action $ACTION
+			fi
+		;;
+	esac
+}
+
+case $1 in
+	"start")
+		ACTION="start"
+		check_openvpn
+		camd_action $2
+	;;
+	"stop")
+		ACTION="stop"
+		camd_action $2
+	;;
+	*)
+		ACTION="restart"
+		camd_action $2
+	;;
+esac

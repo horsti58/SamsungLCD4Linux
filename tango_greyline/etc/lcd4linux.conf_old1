@@ -1,6 +1,6 @@
 # --- PEARL Display (PX-1184, 320x240) -------------------------------------- #
 
-Display Pearl320x240_standard_normal {
+Display Pearl_standard {
 	driver		'DPF'
 	port		'usb0'
 	font		'16x34'
@@ -11,7 +11,7 @@ Display Pearl320x240_standard_normal {
 	backlight	file::readline('/tmp/lcd/brightness', 1)
 }
 
-Display Pearl320x240_standard_radio {
+Display Pearl_radio {
 	driver		'DPF'
 	port		'usb0'
 	font		'16x34'
@@ -22,18 +22,7 @@ Display Pearl320x240_standard_radio {
 	backlight	file::readline('/tmp/lcd/brightness', 1)
 }
 
-Display Pearl320x240_user01_normal {
-	driver		'DPF'
-	port		'usb0'
-	font		'16x34'
-	size		'320x240'
-	basecolor	DBOX2COL
-	foreground	DBOX2COL
-	background	'00000000'
-	backlight	file::readline('/tmp/lcd/brightness', 1)
-}
-
-Display Pearl320x240_user02_normal {
+Display Pearl_large {
 	driver		'DPF'
 	port		'usb0'
 	font		'20x48'
@@ -44,7 +33,7 @@ Display Pearl320x240_user02_normal {
 	backlight	file::readline('/tmp/lcd/brightness', 1)
 }
 
-Display Pearl320x240_user03_normal {
+Display Pearl_small {
 	driver		'DPF'
 	port		'usb0'
 	font		'10x16'
@@ -55,7 +44,29 @@ Display Pearl320x240_user03_normal {
 	backlight	file::readline('/tmp/lcd/brightness', 1)
 }
 
-Display Pearl320x240_user04_normal {
+Display Pearl_d-box2 {
+	driver		'DPF'
+	port		'usb0'
+	font		'16x34'
+	size		'320x240'
+	basecolor	DBOX2COL
+	foreground	DBOX2COL
+	background	'00000000'
+	backlight	file::readline('/tmp/lcd/brightness', 1)
+}
+
+Display Pearl_standard_standby {
+	driver		'DPF'
+	port		'usb0'
+	font		'16x30'
+	size		'320x240'
+	basecolor	'000000'
+	foreground	'ffffff'
+	background	'00000000'
+	backlight	file::readline('/tmp/lcd/brightness_standby', 1)
+}
+
+Display Pearl_user04 {
 	driver		'DPF'
 	port		'usb0'
 	font		'6x9'
@@ -65,20 +76,9 @@ Display Pearl320x240_user04_normal {
 	backlight	file::readline('/tmp/lcd/brightness', 1)
 }
 
-Display Pearl320x240_standard_standby {
-	driver		'DPF'
-	port		'usb0'
-	font		'16x30'
-	size		'320x240'
-	basecolor	'000000'
-	foreground	'ffffff'
-	background	'00000000'
-	backlight	file::readline('/tmp/lcd/brightness', 1)
-}
-
 # --- PNG Standard (800x600) ----------------------------------- #
 
-Display PNG800x600_standard_normal {
+Display PNG_standard {
 	driver 'Image'
 	format 'PNG'
 	font '20x40'
@@ -92,21 +92,7 @@ Display PNG800x600_standard_normal {
 	halfground '00000000'
 }
 
-Display PNG800x600_standard_radio {
-	driver 'Image'
-	format 'PNG'
-	font '20x40'
-	size '800x600'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-Display PNG800x600_user04_normal {
+Display PNG_user04 {
 	driver 'Image'
 	format 'PNG'
 	font '15x24'
@@ -120,7 +106,7 @@ Display PNG800x600_user04_normal {
 	halfground '00000000'
 }
 
-Display PNG800x600_standard_standby {
+Display PNG_standard_standby {
 	driver 'Image'
 	format 'PNG'
 	font '20x40'
@@ -134,126 +120,9 @@ Display PNG800x600_standard_standby {
 	halfground '00000000'
 }
 
-# --- PNG Standard (800x480) ----------------------------------- #
-
-Display PNG800x480_standard_normal {
-	driver 'Image'
-	format 'PNG'
-	font '20x40'
-	size '800x480'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-Display PNG800x480_standard_radio {
-	driver 'Image'
-	format 'PNG'
-	font '20x40'
-	size '800x480'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-Display PNG800x480_user04_normal {
-	driver 'Image'
-	format 'PNG'
-	font '15x19'
-	size '800x480'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-Display PNG800x480_standard_standby {
-	driver 'Image'
-	format 'PNG'
-	font '20x40'
-	size '800x480'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-# --- PNG Standard (1024x600) ----------------------------------- #
-
-Display PNG1024x600_standard_normal {
-	driver 'Image'
-	format 'PNG'
-	font '20x40'
-	size '1024x600'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-Display PNG1024x600_standard_radio {
-	driver 'Image'
-	format 'PNG'
-	font '20x40'
-	size '1024x600'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-Display PNG1024x600_user04_normal {
-	driver 'Image'
-	format 'PNG'
-	font '19x24'
-	size '1024x600'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-Display PNG1024x600_standard_standby {
-	driver 'Image'
-	format 'PNG'
-	font '20x40'
-	size '1024x600'
-	pixel '1+0'
-	gap '0x0'
-	border 0
-	basecolor '000000'
-	foreground 'ffffff'
-	background '00000000'
-	halfground '00000000'
-}
-
-
 # --- Samsung SPF-Auto --------------------------------------------- #
 
-Display Samsung800x600_standard_normal {
+Display Samsung800x600_standard {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -265,7 +134,7 @@ Display Samsung800x600_standard_normal {
 	orientation	1
 }
 
-Display Samsung800x600_user04_normal {
+Display Samsung800x600_user04 {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -277,7 +146,7 @@ Display Samsung800x600_user04_normal {
 	orientation	1
 }
 
-Display Samsung800x480_standard_normal {
+Display Samsung800x480_standard {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -289,7 +158,7 @@ Display Samsung800x480_standard_normal {
 	orientation	1
 }
 
-Display Samsung800x480_user04_normal {
+Display Samsung800x480_user04 {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -301,7 +170,7 @@ Display Samsung800x480_user04_normal {
 	orientation	1
 }
 
-Display Samsung1024x600_standard_normal {
+Display Samsung1024x600_standard {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -313,7 +182,7 @@ Display Samsung1024x600_standard_normal {
 	orientation	1
 }
 
-Display Samsung1024x600_user04_normal {
+Display Samsung1024x600_user04 {
    	driver		'SamsungSPF'
 	model		'SPF-Auto'
    	port		'usb0'
@@ -397,7 +266,6 @@ Display Samsung1024x600_standard_standby {
 	orientation	1
 }
 
-
 # --- Pearl Widgets ----------------------- #
 
 Widget Pearl_LOGO {
@@ -462,7 +330,7 @@ Widget Pearl_EVENT_large {
 	width		16
 	update		250
 	speed		325
-	foreground	COLOR1
+		foreground	COLOR1
 }
 
 Widget Pearl_EVENT_small {
@@ -472,7 +340,7 @@ Widget Pearl_EVENT_small {
 	width		32
 	update		250
 	speed		325
-	foreground	COLOR1
+		foreground	COLOR1
 }
 
 Widget Pearl_EVENT_d-box2 {
@@ -503,7 +371,7 @@ Widget Pearl_PROGRESS_large {
 	max		100
 	length		14
 	update		2600
-	foreground	COLOR3
+	foreground	'000000aa'
 }
 
 Widget Pearl_PROGRESS_small {
@@ -533,7 +401,7 @@ Widget Pearl_DURATION {
 	align		'R'
 	width		13
 	update		500
-	foreground	COLOR1
+		foreground	COLOR1
 }
 
 Widget Pearl_VOLUME_d-box2 {
@@ -553,7 +421,7 @@ Widget Pearl_TIME {
 	align		'L'
 	width		5
 	update		5000
-	foreground	COLOR2
+	foreground	'9E9E9E'
 }
 
 Widget Pearl_TIME_d-box2 {
@@ -610,7 +478,7 @@ Widget Pearl_MTD {
 	align		'R'
 	width		11
 	update		1000
-	foreground	COLOR2
+	foreground	'9E9E9E'
 }
 
 # --- general mode-icons ---------------------------------------------------- #
@@ -674,6 +542,18 @@ Widget Pearl_ICON_TS_d-box2 {
 }
 
 # --- the background -------------------------------------------------------- #
+
+Widget Pearl_BACKGROUND {
+	class		'Image'
+	file		ICONS . 'background/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+}
+
+Widget Pearl_OSCAM {
+	class		'Image'
+	file		ICONS . 'background/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+}
 
 # --- the clocks for standby-mode ------------------------------------------- #
 
@@ -776,7 +656,7 @@ Widget TEMPERATURE_LATER {
 
 Widget S_WEATHER_CITY {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_city', 1)
+	expression	file::readline('/tmp/lcd/weather_city', 1)
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -788,14 +668,14 @@ Widget S_WEATHER_CITY {
 
 Widget S_WEATHER_ICON_CURRENT {
 	class		'image'
-	file		file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_icon', 1)
+	file		file::readline('/tmp/lcd/weather_icon', 1)
 	update		10000
 	reload		1
 }
 
 Widget S_WEATHER_TEMP_CURRENT {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_temp', 1) . '° C'
+	expression	file::readline('/tmp/lcd/weather_temp', 1) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -807,7 +687,7 @@ Widget S_WEATHER_TEMP_CURRENT {
 
 Widget S_WEATHER_DAY1 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (DAY=file::readline('/tmp/lcd/weather_timestamp', 2); DAY == 1 ? 'Montag' : (DAY == 2 ? 'Dienstag' : (DAY == 3 ? 'Mittwoch' : (DAY == 4 ? 'Donnerstag' : (DAY == 5 ? 'Freitag' : (DAY == 6 ? 'Samstag' : 'Sonntag'))))))
+	expression	(DAY=file::readline('/tmp/lcd/weather_timestamp', 2); DAY == 1 ? 'Montag' : (DAY == 2 ? 'Dienstag' : (DAY == 3 ? 'Mittwoch' : (DAY == 4 ? 'Donnerstag' : (DAY == 5 ? 'Freitag' : (DAY == 6 ? 'Samstag' : 'Sonntag'))))))
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -819,14 +699,14 @@ Widget S_WEATHER_DAY1 {
 
 Widget S_WEATHER_ICON_LATER1 {
 	class		'image'
-	file		file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_icon', 2)
+	file		file::readline('/tmp/lcd/weather_icon', 2)
 	update		10000
 	reload		1
 }
 
 Widget S_WEATHER_TEMP_LATER_MAX1 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', 2); substr(TEMP, (strstr(TEMP, '|') + 1))) . '° C'
+	expression	(TEMP=file::readline('/tmp/lcd/weather_temp', 2); substr(TEMP, (strstr(TEMP, '|') + 1))) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -838,7 +718,7 @@ Widget S_WEATHER_TEMP_LATER_MAX1 {
 
 Widget S_WEATHER_TEMP_LATER_MIN1 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', 2); substr(TEMP, 0, (strstr(TEMP, '|')))) . '° C'
+	expression	(TEMP=file::readline('/tmp/lcd/weather_temp', 2); substr(TEMP, 0, (strstr(TEMP, '|')))) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -850,7 +730,7 @@ Widget S_WEATHER_TEMP_LATER_MIN1 {
 
 Widget S_WEATHER_DAY2 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (DAY=file::readline('/tmp/lcd/weather_timestamp', 3); DAY == 1 ? 'Montag' : (DAY == 2 ? 'Dienstag' : (DAY == 3 ? 'Mittwoch' : (DAY == 4 ? 'Donnerstag' : (DAY == 5 ? 'Freitag' : (DAY == 6 ? 'Samstag' : 'Sonntag'))))))
+	expression	(DAY=file::readline('/tmp/lcd/weather_timestamp', 3); DAY == 1 ? 'Montag' : (DAY == 2 ? 'Dienstag' : (DAY == 3 ? 'Mittwoch' : (DAY == 4 ? 'Donnerstag' : (DAY == 5 ? 'Freitag' : (DAY == 6 ? 'Samstag' : 'Sonntag'))))))
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -862,14 +742,14 @@ Widget S_WEATHER_DAY2 {
 
 Widget S_WEATHER_ICON_LATER2 {
 	class		'image'
-	file		file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_icon', 3)
+	file		file::readline('/tmp/lcd/weather_icon', 3)
 	update		10000
 	reload		1
 }
 
 Widget S_WEATHER_TEMP_LATER_MAX2 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', 3); substr(TEMP, (strstr(TEMP, '|') + 1))) . '° C'
+	expression	(TEMP=file::readline('/tmp/lcd/weather_temp', 3); substr(TEMP, (strstr(TEMP, '|') + 1))) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -881,7 +761,7 @@ Widget S_WEATHER_TEMP_LATER_MAX2 {
 
 Widget S_WEATHER_TEMP_LATER_MIN2 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', 3); substr(TEMP, 0, (strstr(TEMP, '|')))) . '° C'
+	expression	(TEMP=file::readline('/tmp/lcd/weather_temp', 3); substr(TEMP, 0, (strstr(TEMP, '|')))) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -893,7 +773,7 @@ Widget S_WEATHER_TEMP_LATER_MIN2 {
 
 Widget S_WEATHER_DAY3 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (DAY=file::readline('/tmp/lcd/weather_timestamp', 4); DAY == 1 ? 'Montag' : (DAY == 2 ? 'Dienstag' : (DAY == 3 ? 'Mittwoch' : (DAY == 4 ? 'Donnerstag' : (DAY == 5 ? 'Freitag' : (DAY == 6 ? 'Samstag' : 'Sonntag'))))))
+	expression	(DAY=file::readline('/tmp/lcd/weather_timestamp', 4); DAY == 1 ? 'Montag' : (DAY == 2 ? 'Dienstag' : (DAY == 3 ? 'Mittwoch' : (DAY == 4 ? 'Donnerstag' : (DAY == 5 ? 'Freitag' : (DAY == 6 ? 'Samstag' : 'Sonntag'))))))
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -905,14 +785,14 @@ Widget S_WEATHER_DAY3 {
 
 Widget S_WEATHER_ICON_LATER3 {
 	class		'image'
-	file		file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_icon', 4)
+	file		file::readline('/tmp/lcd/weather_icon', 4)
 	update		10000
 	reload		1
 }
 
 Widget S_WEATHER_TEMP_LATER_MAX3 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', 4); substr(TEMP, (strstr(TEMP, '|') + 1))) . '° C'
+	expression	(TEMP=file::readline('/tmp/lcd/weather_temp', 4); substr(TEMP, (strstr(TEMP, '|') + 1))) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -924,7 +804,7 @@ Widget S_WEATHER_TEMP_LATER_MAX3 {
 
 Widget S_WEATHER_TEMP_LATER_MIN3 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', 4); substr(TEMP, 0, (strstr(TEMP, '|')))) . '° C'
+	expression	(TEMP=file::readline('/tmp/lcd/weather_temp', 4); substr(TEMP, 0, (strstr(TEMP, '|')))) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -936,7 +816,7 @@ Widget S_WEATHER_TEMP_LATER_MIN3 {
 
 Widget S_WEATHER_DAY4 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (DAY=file::readline('/tmp/lcd/weather_timestamp', 5); DAY == 1 ? 'Montag' : (DAY == 2 ? 'Dienstag' : (DAY == 3 ? 'Mittwoch' : (DAY == 4 ? 'Donnerstag' : (DAY == 5 ? 'Freitag' : (DAY == 6 ? 'Samstag' : 'Sonntag'))))))
+	expression	(DAY=file::readline('/tmp/lcd/weather_timestamp', 5); DAY == 1 ? 'Montag' : (DAY == 2 ? 'Dienstag' : (DAY == 3 ? 'Mittwoch' : (DAY == 4 ? 'Donnerstag' : (DAY == 5 ? 'Freitag' : (DAY == 6 ? 'Samstag' : 'Sonntag'))))))
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -948,14 +828,14 @@ Widget S_WEATHER_DAY4 {
 
 Widget S_WEATHER_ICON_LATER4 {
 	class		'image'
-	file		file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_icon', 5)
+	file		file::readline('/tmp/lcd/weather_icon', 5)
 	update		10000
 	reload		1
 }
 
 Widget S_WEATHER_TEMP_LATER_MAX4 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', 5); substr(TEMP, (strstr(TEMP, '|') + 1))) . '° C'
+	expression	(TEMP=file::readline('/tmp/lcd/weather_temp', 5); substr(TEMP, (strstr(TEMP, '|') + 1))) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -967,7 +847,7 @@ Widget S_WEATHER_TEMP_LATER_MAX4 {
 
 Widget S_WEATHER_TEMP_LATER_MIN4 {
 	class		'Truetype'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', 5); substr(TEMP, 0, (strstr(TEMP, '|')))) . '° C'
+	expression	(TEMP=file::readline('/tmp/lcd/weather_temp', 5); substr(TEMP, 0, (strstr(TEMP, '|')))) . '° C'
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		file::readline('/tmp/lcd/fcolor2', 1)
 	update		10000
@@ -976,6 +856,7 @@ Widget S_WEATHER_TEMP_LATER_MIN4 {
 	height		40
 	align		'M'
 }
+
 # OSCam Widgets--------------------------------------------------------------------------- #
 
 Widget OSCamLINE01 {
@@ -984,7 +865,7 @@ Widget OSCamLINE01 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 1)
 	update		10000
-	foreground	'COLOR1'
+    foreground	'b0b0b0'
 }
 
 Widget OSCamLINE02 {
@@ -993,7 +874,7 @@ Widget OSCamLINE02 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 2)
 	update		10000
-	foreground	COLOR1
+    foreground	'b0b0b0'
 }
 
 Widget OSCamLINE03 {
@@ -1002,7 +883,7 @@ Widget OSCamLINE03 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 3)
 	update		10000
-	foreground	COLOR1
+    foreground	'b0b0b0'
 }
 
 Widget OSCamLINE04 {
@@ -1011,7 +892,7 @@ Widget OSCamLINE04 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 4)
 	update		10000
-	foreground	COLOR1
+    foreground	'b0b0b0'
 }
 
 Widget OSCamLINE05 {
@@ -1020,7 +901,7 @@ Widget OSCamLINE05 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 5)
 	update		10000
-	foreground	COLOR1
+    foreground	'b0b0b0'
 }
 
 Widget OSCamLINE06 {
@@ -1029,7 +910,7 @@ Widget OSCamLINE06 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 6)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE07 {
@@ -1038,7 +919,7 @@ Widget OSCamLINE07 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 7)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE08 {
@@ -1047,7 +928,7 @@ Widget OSCamLINE08 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 8)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE09 {
@@ -1056,7 +937,7 @@ Widget OSCamLINE09 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 9)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE10 {
@@ -1065,7 +946,7 @@ Widget OSCamLINE10 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 10)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE11 {
@@ -1074,7 +955,7 @@ Widget OSCamLINE11 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 11
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE12 {
@@ -1083,7 +964,7 @@ Widget OSCamLINE12 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 12)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE13 {
@@ -1092,7 +973,7 @@ Widget OSCamLINE13 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 13)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE14 {
@@ -1101,7 +982,7 @@ Widget OSCamLINE14 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 14)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE15 {
@@ -1110,7 +991,7 @@ Widget OSCamLINE15 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 15)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE16 {
@@ -1119,7 +1000,7 @@ Widget OSCamLINE16 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 16)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE17 {
@@ -1128,7 +1009,7 @@ Widget OSCamLINE17 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 17)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE18 {
@@ -1137,7 +1018,7 @@ Widget OSCamLINE18 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 18)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE19 {
@@ -1146,7 +1027,7 @@ Widget OSCamLINE19 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 19)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE20 {
@@ -1155,7 +1036,7 @@ Widget OSCamLINE20 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 20)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE21 {
@@ -1164,7 +1045,7 @@ Widget OSCamLINE21 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 21)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE22 {
@@ -1181,7 +1062,7 @@ Widget OSCamLINE23 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 23)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE24 {
@@ -1190,7 +1071,7 @@ Widget OSCamLINE24 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 24)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE25 {
@@ -1199,7 +1080,7 @@ Widget OSCamLINE25 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 25)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE26 {
@@ -1208,7 +1089,7 @@ Widget OSCamLINE26 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 26)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE27 {
@@ -1217,7 +1098,7 @@ Widget OSCamLINE27 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 27)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE28 {
@@ -1226,7 +1107,7 @@ Widget OSCamLINE28 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 28)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE29 {
@@ -1235,7 +1116,7 @@ Widget OSCamLINE29 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 29)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 Widget OSCamLINE30 {
@@ -1244,22 +1125,173 @@ Widget OSCamLINE30 {
 	align		'L'
 	expression	file::readline('/tmp/.oscam/oscam.lcd', 30)
 	update		10000
-	foreground	COLOR2
+    foreground	'787878'
 }
 
 # --- Widgets -----------------------------------------------------------------------------#
 
-Widget BG {
+# --- PNG_STANDARD 800x600 --------------------------------------------------------------------------- #
+
+Widget PNG_STANDARD_BG {
 	class		'Image'
-	file ICONS . 'background/' . file::readline('/tmp/lcd/layout', 2) . '/' . file::readline('/tmp/lcd/layout', 3) . '_' . file::readline('/tmp/lcd/layout', 4) . '.png'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+}
+
+Widget PNG_STANDARD_STB {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+}
+
+# --- 800x600 ----------------------------------------------------#
+
+Widget S_STB {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
 	update		0
 	reload		1
 }
 
-Widget BG1 {
+Widget S_BG {
 	class		'Image'
-	file		ICONS . 'background/' . file::readline('/tmp/lcd/layout', 2) . '/' . file::readline('/tmp/lcd/brightness', 1) . '.png'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+Widget S_BG1 {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/brightness', 1) . '.png'
 	update		3000
+	reload		1
+}
+
+Widget S_STB1 {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/brightness_standby', 1) . '.png'
+	update		5000
+	reload		1
+}
+
+Widget S800x600_STB {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+Widget S800x600_BG {
+	class       'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+Widget S800x600_BG1 {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/brightness', 1) . '.png'
+	update		3000
+	reload		1
+}
+
+Widget S800x600_STB1 {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/brightness_standby', 1) . '.png'
+	update		5000
+	reload		1
+}
+
+Widget S800x600_OSCAM {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+# --- 800x480 ----------------------------------------------------#
+
+Widget S800x480_STB {
+	class		'Image'
+	file		ICONS . 'background/800x480/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+Widget S800x480_BG {
+	class		'Image'
+	file		ICONS . 'background/800x480/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+Widget S800x480_BG1 {
+	class		'Image'
+	file		ICONS . 'background/800x480/' . file::readline('/tmp/lcd/brightness', 1) . '.png'
+	update		3000
+	reload		1
+}
+
+Widget S800x480_STB1 {
+	class		'Image'
+	file		ICONS . 'background/800x480/' . file::readline('/tmp/lcd/brightness_standby', 1) . '.png'
+	update		5000
+	reload		1
+}
+
+Widget S800x480_OSCAM {
+	class		'Image'
+	file		ICONS . 'background/800x480/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+# --- 1024x600 ----------------------------------------------------#
+
+Widget S1024x600_STB {
+	class		'Image'
+	file		ICONS . 'background/1024x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+Widget S1024x600_STB_T {
+	class		'Image'
+	file		ICONS . 'background/1024x600/' . file::readline('/tmp/lcd/layout', 1) . '_.png'
+	update		0
+}
+
+Widget S1024x600_STB_C {
+	class		'Image'
+	file		file::exist(BGROUND3) == 1 ? BGROUND3 : ICONS . 'background/1024x600/' . file::readline('/tmp/lcd/layout', 1) . '_black.png'
+	update		0
+}
+
+Widget S1024x600_BG {
+	class		'Image'
+	file		ICONS . 'background/1024x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
+	reload		1
+}
+
+Widget S1024x600_BG1 {
+	class		'Image'
+	file		ICONS . 'background/1024x600/' . file::readline('/tmp/lcd/brightness', 1) . '.png'
+	update		3000
+	reload		1
+}
+
+Widget S1024x600_STB1 {
+	class		'Image'
+	file		ICONS . 'background/1024x600/' . file::readline('/tmp/lcd/brightness_standby', 1) . '.png'
+	update		5000
+	reload		1
+}
+
+Widget S1024x600_OSCAM {
+	class		'Image'
+	file		ICONS . 'background/1024x600/' . file::readline('/tmp/lcd/layout', 1) . '.png'
+	update		0
 	reload		1
 }
 
@@ -1311,24 +1343,6 @@ Widget S_ECM {
 	scale		300
 }
 
-Widget S_SOFTCAM {
-	class		'Image'
-	file		ICONS . 'mode/cam_' . file::readline('/tmp/lcd/mode_softcam', 1) . '.png'
-	update		4000
-	reload		1
-	align		'R'
-	scale		300
-}
-
-Widget S_CI {
-	class		'Image'
-	file		ICONS . 'mode/ci_' . file::readline('/tmp/lcd/mode_cam', 1) . '.png'
-	update		4000
-	reload		1
-	align		'R'
-	scale		300
-}
-
 Widget S_LOGO {
 	class		'Image'
 	file        file::readline('/tmp/lcd/logo', 1)
@@ -1347,22 +1361,11 @@ Widget S_LOGO1 {
 	scale		270
 }
 
-Widget S_LOGO2 {
-	class		'Image'
-	file		file::readline('/tmp/lcd/logo', 1)
-	update		3000
-	reload		1
-	width		1000
-	height		135
-	scale		100
-	center		1
-}
-
 Widget S_TTF-CHANNEL {
 	class		'Truetype'
 	expression	file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1)
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		COLOR1
+	fcolor		COLOR4
 	update		3000
 	reload		1
 	width		780
@@ -1374,7 +1377,7 @@ Widget S_TTF-CHANNEL1 {
 	class		'Truetype'
 	expression	(file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1))
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		COLOR1
+	fcolor		COLOR4
 	update		3000
 	reload		1
 	width		950
@@ -1398,7 +1401,7 @@ Widget S_START {
 Widget S_END {
 	class		'Truetype'
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		COLOR2
+	fcolor		COLOR4
 	size		0
 	height		50
 	width		150
@@ -1410,7 +1413,7 @@ Widget S_END {
 
 Widget S_TTF-EPG-NOW {
 	class		'Truetype'
-	expression	file::readline('/tmp/lcd/event', 1)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? file::readline('/tmp/lcd/menu', 1) : file::readline('/tmp/lcd/event', 1)
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		COLOR1
 	update		3000
@@ -1424,7 +1427,7 @@ Widget S_TTF-EPG-NOW {
 
 Widget S_TTF-EPG-NOW1 {
 	class		'Truetype'
-	expression	file::readline('/tmp/lcd/event', 1)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? file::readline('/tmp/lcd/menu', 1) : file::readline('/tmp/lcd/event', 1)
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		COLOR1
 	update		3000
@@ -1436,9 +1439,9 @@ Widget S_TTF-EPG-NOW1 {
 
 Widget S_TTF-EPG-NEXT {
 	class		'Truetype'
-	expression	file::readline('/tmp/lcd/event', 2)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/event', 2)
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		COLOR2
+	fcolor		COLOR4
 	update		3000
 	reload		1
 	inverted	0
@@ -1450,9 +1453,9 @@ Widget S_TTF-EPG-NEXT {
 
 Widget S_TTF-EPG-NEXT1 {
 	class		'Truetype'
-	expression	file::readline('/tmp/lcd/event', 2)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/event', 2)
 	font		file::readline('/tmp/lcd/font', 1)
-	fcolor		COLOR2
+	fcolor		COLOR4
 	update		3000
 	reload		1
 	width		790
@@ -1462,7 +1465,7 @@ Widget S_TTF-EPG-NEXT1 {
 
 Widget S_DURATION {
 	class		'Truetype'
-	expression	file::readline('/tmp/lcd/duration', 1)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/duration', 1)
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		COLOR1
 	update		3000
@@ -1476,7 +1479,7 @@ Widget S_DURATION {
 
 Widget S_DURATION1 {
 	class		'Truetype'
-	expression	file::readline('/tmp/lcd/duration', 1)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/duration', 1)
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		COLOR1
 	update		3000
@@ -1488,18 +1491,18 @@ Widget S_DURATION1 {
 
 Widget S_EPGBAR {
 	class		'Bar'
-	expression	file::readline('/tmp/lcd/progress', 1)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/progress', 1)
 	min		0
 	max		100
-	length		36
+	length      36
 	update		3000
-	direction	'E'
+	direction   'E'
 	foreground	COLOR3
 }
 
 Widget S_EPGBAR2 {
 	class		'Bar'
-	expression	file::readline('/tmp/lcd/progress', 1)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/progress', 1)
 	min		0
 	max		100
 	length		46
@@ -1527,7 +1530,7 @@ Widget HST_STB {
 	width		30
 	height		20
 	align		'L'
-	expression	file::readline('/tmp/lcd/brightness', 1)
+	expression	file::readline('/tmp/lcd/brightness_standby', 1)
 	update		0
 	reload		1
 }
@@ -1565,7 +1568,7 @@ Widget RES1024x600 {
 	update		0
 }
 
-# --- the digital clock weiss----------------------------------------------------- #
+# --- the digital clock ----------------------------------------------------- #
 
 Widget S_HOUR1_ {
 	class		'image'
@@ -1604,45 +1607,6 @@ Widget S_MIN_1 {
 	update		10000
 	reload		1
 	scale		50
-}
-
-Widget S_HOUR1_2 {
-	class		'image'
-	file		ICONS . 'clock/digital_weiss_129px/' . substr(strftime('%H', time()), 0, 1) . '.png'
-	update		10000
-	reload		1
-	scale		70
-}
-
-Widget S_HOUR_12 {
-	class		'image'
-	file		ICONS . 'clock/digital_weiss_129px/' . substr(strftime('%H', time()), 1) . '.png'
-	update		10000
-	reload		1
-	scale		70
-}
-
-Widget S_DP2 {
-	class		'Image'
-	file		ICONS . 'clock/digital_weiss_129px/dp.png'
-	update		0
-	scale		70
-}
-
-Widget S_MIN1_2 {
-	class		'image'
-	file		ICONS . 'clock/digital_weiss_129px/' . substr(strftime('%M', time()), 0, 1) . '.png'
-	update		10000
-	reload		1
-	scale		70
-}
-
-Widget S_MIN_12 {
-	class		'image'
-	file		ICONS . 'clock/digital_weiss_129px/' . substr(strftime('%M', time()), 1) . '.png'
-	update		10000
-	reload		1
-	scale		70
 }
 
 Widget S_STANDBY_HOUR1_ {
@@ -1692,30 +1656,30 @@ Widget TAGDATUM-TTF {
 	expression	(strftime('%u', time()) == 1 ? 'Montag' : (strftime('%u', time()) == 2 ? 'Dienstag' : (strftime('%u', time()) == 3 ? 'Mittwoch' : (strftime('%u', time()) == 4 ? 'Donnerstag' : (strftime('%u', time()) == 5 ? 'Freitag' : (strftime('%u', time()) == 6 ? 'Samstag' : 'Sonntag')))))) . ', ' . strftime('%d.%m.%Y', time())
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		COLOR1
-	align		'C'
-	width		800
-	height		75
-	update		30000
-	reload		1
-	visible		1
+	align	'C'
+	width	800
+	height	75
+	update	30000
+	reload	1
+	visible	1
 }
 
 Widget TAGDATUM-TTF1 {
 	class	'truetype'
-    expression	(strftime('%u', time()) == 1 ? 'Montag' : (strftime('%u', time()) == 2 ? 'Dienstag' : (strftime('%u', time()) == 3 ? 'Mittwoch' : (strftime('%u', time()) == 4 ? 'Donnerstag' : (strftime('%u', time()) == 5 ? 'Freitag' : (strftime('%u', time()) == 6 ? 'Samstag' : 'Sonntag')))))) . ', ' . strftime('%d.%m.%Y', time())
+expression	(strftime('%u', time()) == 1 ? 'Montag' : (strftime('%u', time()) == 2 ? 'Dienstag' : (strftime('%u', time()) == 3 ? 'Mittwoch' : (strftime('%u', time()) == 4 ? 'Donnerstag' : (strftime('%u', time()) == 5 ? 'Freitag' : (strftime('%u', time()) == 6 ? 'Samstag' : 'Sonntag')))))) . ', ' . strftime('%d.%m.%Y', time())
 	font		file::readline('/tmp/lcd/font', 1)
 	fcolor		COLOR1
-	align		'C'
-	width		1000
-	height		75
-	update		30000
-	reload		1
-	visible		1
+	align	'C'
+	width	1000
+	height	75
+	update	30000
+	reload	1
+	visible	1
 }
 
 # Pearl Layout --------------------------------------------------------------------------- #
 
-Layout Pearl320x240_standard_normal {
+Layout Pearl_standard {
 	layer 0 {
 		row02.col01	'Pearl_SERVICE'
 		row04.col01	'Pearl_EVENT'
@@ -1736,11 +1700,11 @@ Layout Pearl320x240_standard_normal {
 	}
 
 	layer 2 {
-		x001.y001	'BG'
+		x001.y001	'Pearl_BACKGROUND'
 	}
 }
 
-Layout Pearl320x240_standard_radio {
+Layout Pearl_radio {
 	layer 0 {
 		row02.col01	'Pearl_SERVICE'
 		row04.col01	'Pearl_EVENT'
@@ -1761,36 +1725,11 @@ Layout Pearl320x240_standard_radio {
 	}
 
 	layer 2 {
-		x001.y001	'BG'
+		x001.y001	'Pearl_BACKGROUND'
 	}
 }
 
-Layout Pearl320x240_user01_normal {
-	layer 0 {
-		row01.col04	'Pearl_PROGRESS_d-box2'
-		row03.col01	'Pearl_SERVICE_d-box2'
-		row05.col01	'Pearl_EVENT_d-box2'
-		row07 {
-			col04	'Pearl_VOLUME_d-box2'
-			col15	'Pearl_TIME_d-box2'
-		}
-	}
-
-	layer 1 {
-		x045.y073	'Pearl_ICON_ECM_d-box2'
-		x045.y217	'Pearl_ICON_TIMER_d-box2'
-		x045.y258	'Pearl_ICON_REC_d-box2'
-		x045.y289	'Pearl_ICON_TS_d-box2'
-
-		x060.y001	'Pearl_LOGO'
-	}
-
-	layer 2 {
-		x001.y001	'BG'
-	}
-}
-
-Layout Pearl320x240_user02_normal {
+Layout Pearl_large {
 	layer 0 {
 		row02.col01	'Pearl_SERVICE_large'
 		row04.col01	'Pearl_EVENT_large'
@@ -1807,11 +1746,11 @@ Layout Pearl320x240_user02_normal {
 	}
 
 	layer 2 {
-		x001.y001	'BG'
+		x001.y001	'Pearl_BACKGROUND'
 	}
 }
 
-Layout Pearl320x240_user03_normal {
+Layout Pearl_small {
 	layer 0 {
 		row04.col01	'Pearl_SERVICE_small'
 		row06.col01	'Pearl_EVENT_small'
@@ -1837,45 +1776,36 @@ Layout Pearl320x240_user03_normal {
 	}
 
 	layer 2 {
-		x001.y001	'BG'
+		x001.y001	'Pearl_BACKGROUND'
 	}
 }
 
-Layout Pearl320x240_user04_normal {
+Layout Pearl_d-box2 {
 	layer 0 {
-		row01.col01	'OSCamLINE02'
-		row02.col01	'OSCamLINE03'
-		row03.col01	'OSCamLINE06'
-		row04.col01	'OSCamLINE07'
-		row05.col01	'OSCamLINE08'
-		row06.col01	'OSCamLINE09'
-		row07.col01	'OSCamLINE10'
-		row08.col01	'OSCamLINE11'
-		row09.col01	'OSCamLINE12'
-		row10.col01	'OSCamLINE13'
-		row11.col01	'OSCamLINE14'
-		row12.col01	'OSCamLINE15'
-		row13.col01	'OSCamLINE16'
-		row14.col01	'OSCamLINE17'
-		row15.col01	'OSCamLINE18'
-		row16.col01	'OSCamLINE19'
-		row17.col01	'OSCamLINE20'
-		row18.col01	'OSCamLINE21'
-		row19.col01	'OSCamLINE22'
-		row20.col01	'OSCamLINE23'
-		row21.col01	'OSCamLINE24'
-		row22.col01	'OSCamLINE25'
-		row23.col01	'OSCamLINE26'
-		row24.col01	'OSCamLINE27'
-		row25.col01	'OSCamLINE28'
-		X220.Y5     'HST'
+		row01.col04	'Pearl_PROGRESS_d-box2'
+		row03.col01	'Pearl_SERVICE_d-box2'
+		row05.col01	'Pearl_EVENT_d-box2'
+		row07 {
+			col04	'Pearl_VOLUME_d-box2'
+			col15	'Pearl_TIME_d-box2'
+		}
 	}
+
 	layer 1 {
-		x001.y001	'BG'
+		x045.y073	'Pearl_ICON_ECM_d-box2'
+		x045.y217	'Pearl_ICON_TIMER_d-box2'
+		x045.y258	'Pearl_ICON_REC_d-box2'
+		x045.y289	'Pearl_ICON_TS_d-box2'
+
+		x060.y001	'Pearl_LOGO'
+	}
+
+	layer 2 {
+		x001.y001	'Pearl_BACKGROUND'
 	}
 }
 
-Layout Pearl320x240_standard_standby {
+Layout Pearl_standard_standby {
 	layer 0 {
 		x020.y085	'Pearl_MIN_A'
 
@@ -1884,8 +1814,6 @@ Layout Pearl320x240_standard_standby {
 		X034.Y145	'Pearl_DP'
 		X034.Y175	'Pearl_MIN1_'
 		X034.Y235	'Pearl_MIN_1'
-
-		row01.col1	'EXEC_WEATHER-SCRIPT'
 		x225.y132	'ICON_WEATHER'
 		X168.Y017	'WEATHERICON_CURRENT'
 		X168.Y241	'WEATHERICON_LATER'
@@ -1905,87 +1833,84 @@ Layout Pearl320x240_standard_standby {
 	layer 2 {
 		x020.y000	'Pearl_DIAL_A'
 
-		x001.y001	'BG'
+		x001.y001	'Pearl_BACKGROUND'
+	}
+}
+
+Layout Pearl_user04 {
+	layer 0 {
+		row01.col01	'OSCamLINE02'
+		row02.col01	'OSCamLINE03'
+		row03.col01	'OSCamLINE06'
+		row04.col01	'OSCamLINE07'
+		row05.col01	'OSCamLINE08'
+		row06.col01	'OSCamLINE09'
+		row07.col01	'OSCamLINE10'
+		row08.col01	'OSCamLINE11'
+		row09.col01	'OSCamLINE12'
+		row10.col01	'OSCamLINE13'
+		row11.col01	'OSCamLINE14'
+		row12.col01	'OSCamLINE15'
+		row13.col01	'OSCamLINE16'
+		row14.col01	'OSCamLINE17'
+		row15.col01	'OSCamLINE18'
+		row16.col01	'OSCamLINE19'
+		row17.col01	'OSCamLINE20'
+		row18.col01	'OSCamLINE21'
+		row19.col01	'OSCamLINE22'
+		row20.col01	'OSCamLINE23'
+		row21.col01	'OSCamLINE24'
+		row22.col01	'OSCamLINE25'
+		row23.col01	'OSCamLINE26'
+		row24.col01	'OSCamLINE27'
+		row25.col01	'OSCamLINE28'
+		X220.Y5 'HST'
+	}
+	layer 1 {
+		x001.y001	'Pearl_OSCAM'
 	}
 }
 
 # --- PNG Layouts --------------------------------------------- #
 
-Layout PNG800x600_standard_normal {
+Layout PNG_standard {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x600_BG1'
 	}
 	Layer 1 {
-		X14.Y180	'S_TIMER'
-		X14.Y305	'S_REC'
-		X14.Y400	'S_TS'
-		X14.Y475	'S_ECM'
-        X14.Y560	'S_CI'
-        X14.Y650	'S_SOFTCAM'
-		X60.Y10		'S_LOGO'
-		X260.Y5		'S_START'
-		X260.Y160	'S_TTF-EPG-NOW'
-		X320.Y160	'S_TTF-EPG-NEXT'
-		X320.Y5		'S_END'
-		X510.Y35    'S_HOUR1_'
-		X510.Y80    'S_HOUR_1'
-		X510.Y122   'S_DP'
-		X510.Y140   'S_MIN1_'
-		X510.Y185   'S_MIN_1'
-		X480.Y300   'S_WEATHER_ICON_CURRENT'
-		X500.Y370   'S_WEATHER_TEMP_CURRENT'
-		X560.Y340   'S_WEATHER_CITY'
-		X510.Y625	'S_DURATION'
-		X580.Y5		'HST'
-		X580.Y700	'RES800x600'
+		X14.Y220 'S_TIMER'
+		X14.Y360 'S_REC'
+		X14.Y470 'S_TS'
+		X14.Y570 'S_ECM'
+		X60.Y10  'S_LOGO'
+		X260.Y5 'S_START'
+		X260.Y160 'S_TTF-EPG-NOW'
+		X320.Y160 'S_TTF-EPG-NEXT'
+		X320.Y5 'S_END'
+		X510.Y35 'S_HOUR1_'
+		X510.Y80 'S_HOUR_1'
+		X510.Y122 'S_DP'
+		X510.Y140 'S_MIN1_'
+		X510.Y185 'S_MIN_1'
+		X480.Y300 'S_WEATHER_ICON_CURRENT'
+		X500.Y370 'S_WEATHER_TEMP_CURRENT'
+		X560.Y300 'S_WEATHER_CITY'
+		X510.Y625 'S_DURATION'
+		X580.Y5 'HST'
+		X580.Y700 'RES800x600'
 	}
 	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL'
-		Row11.Col03	'S_EPGBAR'
+		X60.Y10   'S_TTF-CHANNEL'
+		Row11.Col03 'S_EPGBAR'
 	}
 	Layer 3 {
-		X1.Y1		'BG'
+		X1.Y1 'PNG_STANDARD_BG'
 	}
 }
 
-Layout PNG800x600_standard_radio {
+Layout PNG_user04 {
 	Layer 0 {
-		X1.Y1		'BG1'
-	}
-	Layer 1 {
-		X14.Y220	'S_TIMER'
-		X14.Y360	'S_REC'
-		X14.Y470	'S_TS'
-		X14.Y570	'S_ECM'
-		X60.Y10		'S_LOGO'
-		X260.Y5		'S_START'
-		X260.Y160	'S_TTF-EPG-NOW'
-		X320.Y160	'S_TTF-EPG-NEXT'
-		X320.Y5		'S_END'
-		X510.Y35    'S_HOUR1_'
-		X510.Y80    'S_HOUR_1'
-		X510.Y122   'S_DP'
-		X510.Y140   'S_MIN1_'
-		X510.Y185   'S_MIN_1'
-		X480.Y300   'S_WEATHER_ICON_CURRENT'
-		X500.Y370   'S_WEATHER_TEMP_CURRENT'
-		X560.Y340   'S_WEATHER_CITY'
-		X510.Y625	'S_DURATION'
-		X580.Y5		'HST'
-		X580.Y700	'RES800x600'
-	}
-	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL'
-		Row11.Col03	'S_EPGBAR'
-	}
-	Layer 3 {
-		X1.Y1		'BG'
-	}
-}
-
-Layout PNG800x600_user04_normal {
-	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x600_BG1'
 	}
 	layer 1 {
 		row01.col01	'OSCamLINE02'
@@ -2013,447 +1938,197 @@ Layout PNG800x600_user04_normal {
 		row23.col01	'OSCamLINE26'
 		row24.col01	'OSCamLINE27'
 		row25.col01	'OSCamLINE28'
-		X580.Y5		'HST'
+		X580.Y5 'HST'
 	}
 	Layer 2 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x600_OSCAM'
 	}
 }
 
-Layout PNG800x600_standard_standby {
-	Layer 0 {
-		X1.Y1		'STB1'
-	}
-	layer 1 {
-		X11.Y180	'S_TIMER'
-		X11.Y305	'S_REC'
-		X11.Y400	'S_TS'
-		X11.Y475	'S_ECM'
-        X11.Y560	'S_CI'
-        X11.Y650	'S_SOFTCAM'
-		X70.Y20		'TAGDATUM-TTF'
-		X160.Y120	'S_STANDBY_HOUR1_'
-		X160.Y244	'S_STANDBY_HOUR_1'
-		X160.Y365	'S_STANDBY_DP'
-		X160.Y428	'S_STANDBY_MIN1_'
-		X160.Y551	'S_STANDBY_MIN_1'
-		X400.Y100   'S_WEATHER_ICON_CURRENT'
-		X470.Y40    'S_WEATHER_TEMP_CURRENT'
-		X555.Y10    'S_WEATHER_CITY'
-		X400.Y240   'S_WEATHER_TEMP_LATER_MAX1'
-		X445.Y273   'S_WEATHER_ICON_LATER1'
-		X515.Y240   'S_WEATHER_TEMP_LATER_MIN1'
-		X560.Y240   'S_WEATHER_DAY1'
-		X400.Y390   'S_WEATHER_TEMP_LATER_MAX2'
-		X445.Y423   'S_WEATHER_ICON_LATER2'
-		X515.Y390   'S_WEATHER_TEMP_LATER_MIN2'
-		X560.Y390   'S_WEATHER_DAY2'
-		X400.Y540   'S_WEATHER_TEMP_LATER_MAX3'
-		X445.Y573   'S_WEATHER_ICON_LATER3'
-		X515.Y540   'S_WEATHER_TEMP_LATER_MIN3'
-		X560.Y540   'S_WEATHER_DAY3'
-		X580.Y5		'HST_STB'
-		X580.Y700	'RES800x600'
-	}
-	layer 2 {
-		X1.Y1	 	'BG'
-	}
-}
 
-Layout PNG800x480_standard_normal {
+Layout PNG_standard_radio {
 	Layer 0 {
-		X1.Y1		'BG1'
-	}
-	 Layer 1 {
-		X10.Y220	'S_TIMER'
-		X10.Y360	'S_REC'
-		X10.Y470	'S_TS'
-		X10.Y560	'S_ECM'
-		X40.Y10		'S_LOGO'
-		X205.Y5		'S_START'
-		X205.Y155	'S_TTF-EPG-NOW'
-		X260.Y155	'S_TTF-EPG-NEXT'
-		X260.Y5		'S_END'
-		X400.Y35    'S_HOUR1_'
-		X400.Y80    'S_HOUR_1'
-		X400.Y122   'S_DP'
-		X400.Y140   'S_MIN1_'
-		X400.Y185   'S_MIN_1'
-		X370.Y300   'S_WEATHER_ICON_CURRENT'
-		X390.Y370   'S_WEATHER_TEMP_CURRENT'
-		X450.Y300   'S_WEATHER_CITY'
-		X410.Y625	'S_DURATION'
-		X460.Y5		'HST'
-		X460.Y700	'RES800x480'
-	}
-	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL'
-		Row09.Col03	'S_EPGBAR'
-	}
-	Layer 3 {
-		X1.Y1		'BG'
-	}
-}
-
-Layout PNG800x480_standard_radio {
-	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x600_BG1'
 	}
 	Layer 1 {
-		X10.Y220	'S_TIMER'
-		X10.Y360	'S_REC'
-		X10.Y470	'S_TS'
-		X10.Y560	'S_ECM'
-		X40.Y10		'S_LOGO'
-		X205.Y5		'S_START'
-		X205.Y155	'S_TTF-EPG-NOW'
-		X260.Y155	'S_TTF-EPG-NEXT'
-		X260.Y5		'S_END'
-		X400.Y35    'S_HOUR1_'
-		X400.Y80    'S_HOUR_1'
-		X400.Y122   'S_DP'
-		X400.Y140   'S_MIN1_'
-		X400.Y185   'S_MIN_1'
-		X370.Y300   'S_WEATHER_ICON_CURRENT'
-		X390.Y370   'S_WEATHER_TEMP_CURRENT'
-		X450.Y300   'S_WEATHER_CITY'
-		X410.Y625	'S_DURATION'
-		X460.Y5		'HST'
-		X460.Y700	'RES800x480'
+		X14.Y220 'S_TIMER'
+		X14.Y360 'S_REC'
+		X14.Y470 'S_TS'
+		X14.Y570 'S_ECM'
+		X60.Y10  'S_LOGO'
+		X260.Y5 'S_START'
+		X260.Y160 'S_TTF-EPG-NOW'
+		X320.Y160 'S_TTF-EPG-NEXT'
+		X320.Y5 'S_END'
+		X510.Y35 'S_HOUR1_'
+		X510.Y80 'S_HOUR_1'
+		X510.Y122 'S_DP'
+		X510.Y140 'S_MIN1_'
+		X510.Y185 'S_MIN_1'
+		X480.Y300 'S_WEATHER_ICON_CURRENT'
+		X500.Y370 'S_WEATHER_TEMP_CURRENT'
+		X560.Y340 'S_WEATHER_CITY'
+		X510.Y625 'S_DURATION'
+		X580.Y5 'HST'
+		X580.Y700 'RES800x600'
 	}
 	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL'
-		Row09.Col03	'S_EPGBAR'
+		X60.Y10   'S_TTF-CHANNEL'
+		Row11.Col03 'S_EPGBAR'
 	}
 	Layer 3 {
-		X1.Y1		'BG'
+		X1.Y1 'PNG_STANDARD_BG'
 	}
 }
 
-Layout PNG800x480_user04_normal {
+Layout PNG_standard_standby {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x600_STB1'
 	}
 	layer 1 {
-		row01.col01	'OSCamLINE02'
-		row02.col01	'OSCamLINE03'
-		row03.col01	'OSCamLINE06'
-		row04.col01	'OSCamLINE07'
-		row05.col01	'OSCamLINE08'
-		row06.col01	'OSCamLINE09'
-		row07.col01	'OSCamLINE10'
-		row08.col01	'OSCamLINE11'
-		row09.col01	'OSCamLINE12'
-		row10.col01	'OSCamLINE13'
-		row11.col01	'OSCamLINE14'
-		row12.col01	'OSCamLINE15'
-		row13.col01	'OSCamLINE16'
-		row14.col01	'OSCamLINE17'
-		row15.col01	'OSCamLINE18'
-		row16.col01	'OSCamLINE19'
-		row17.col01	'OSCamLINE20'
-		row18.col01	'OSCamLINE21'
-		row19.col01	'OSCamLINE22'
-		row20.col01	'OSCamLINE23'
-		row21.col01	'OSCamLINE24'
-		row22.col01	'OSCamLINE25'
-		row23.col01	'OSCamLINE26'
-		row24.col01	'OSCamLINE27'
-		row25.col01	'OSCamLINE28'
-		X460.Y5		'HST'
-	}
-	Layer 2 {
-		X1.Y1		'BG'
-	}
-}
-
-Layout PNG800x480_standard_standby {
-	Layer 0 {
-		X1.Y1		'BG1'
-	}
-	layer 1 {
-		X10.Y220	'S_TIMER'
-		X10.Y360	'S_REC'
-		X10.Y470	'S_TS'
-		X10.Y560	'S_ECM'
-		X70.Y0		'TAGDATUM-TTF'
-		X160.Y123	'S_STANDBY_HOUR1_'
-		X160.Y244	'S_STANDBY_HOUR_1'
-		X160.Y365	'S_STANDBY_DP'
-		X160.Y427	'S_STANDBY_MIN1_'
-		X160.Y548	'S_STANDBY_MIN_1'
-		X350.Y270   'S_WEATHER_ICON_CURRENT'
-		X380.Y350   'S_WEATHER_TEMP_CURRENT'
-		X440.Y270   'S_WEATHER_CITY'
-		X460.Y5		'HST_STB'
-		X460.Y700	'RES800x480'
+		X11.Y220 'S_TIMER'
+		X11.Y360 'S_REC'
+		X11.Y470 'S_TS'
+		X11.Y570 'S_ECM'
+		X70.Y20 'TAGDATUM-TTF'
+		X160.Y120 'S_STANDBY_HOUR1_'
+		X160.Y244 'S_STANDBY_HOUR_1'
+		X160.Y365 'S_STANDBY_DP'
+		X160.Y428 'S_STANDBY_MIN1_'
+		X160.Y551 'S_STANDBY_MIN_1'
+		X400.Y10 'S_WEATHER_ICON_CURRENT'
+		X470.Y40 'S_WEATHER_TEMP_CURRENT'
+		X555.Y10 'S_WEATHER_CITY'
+		X400.Y240 'S_WEATHER_TEMP_LATER_MAX1'
+		X445.Y273 'S_WEATHER_ICON_LATER1'
+		X515.Y240 'S_WEATHER_TEMP_LATER_MIN1'
+		X560.Y240 'S_WEATHER_DAY1'
+		X400.Y390 'S_WEATHER_TEMP_LATER_MAX2'
+		X445.Y423 'S_WEATHER_ICON_LATER2'
+		X515.Y390 'S_WEATHER_TEMP_LATER_MIN2'
+		X560.Y390 'S_WEATHER_DAY2'
+		X400.Y540 'S_WEATHER_TEMP_LATER_MAX3'
+		X445.Y573 'S_WEATHER_ICON_LATER3'
+		X515.Y540 'S_WEATHER_TEMP_LATER_MIN3'
+		X560.Y540 'S_WEATHER_DAY3'
+		X580.Y5 'HST_STB'
+		X580.Y700 'RES800x600'
 	}
 	layer 2 {
-		X1.Y1		'BG'
-	}
-}
-
-Layout PNG1024x600_standard_normal {
-	Layer 0 {
-		X1.Y1		'BG1'
-	}
-	Layer 1 {
-		X13.Y220	'S_TIMER'
-		X13.Y360	'S_REC'
-		X13.Y470	'S_TS'
-		X13.Y560	'S_ECM'
-		X60.Y10		'S_LOGO1'
-		X260.Y5		'S_START'
-		X260.Y160	'S_TTF-EPG-NOW1'
-		X320.Y160	'S_TTF-EPG-NEXT1'
-		X320.Y5		'S_END'
-		X480.Y130   'S_HOUR1_2'
-		X480.Y195   'S_HOUR_12'
-		X480.Y260   'S_DP2'
-		X480.Y293   'S_MIN1_2'
-		X480.Y358   'S_MIN_12'
-		X480.Y470   'S_WEATHER_ICON_CURRENT'
-		X490.Y550   'S_WEATHER_TEMP_CURRENT'
-		X550.Y470   'S_WEATHER_CITY'
-		X520.Y840	'S_DURATION'
-		X580.Y5		'HST'
-		X580.Y924	'RES1024x600'
-	}
-	Layer 2 {
-		X60.Y10     'S_TTF-CHANNEL1'
-		Row11.Col03 'S_EPGBAR2'
-	}
-	Layer 3 {
-		X1.Y1		'BG'
-	}
-}
-
-Layout PNG1024x600_standard_radio {
-	Layer 0 {
-		X1.Y1		'BG1'
-	}
-	Layer 1 {
-		X13.Y220	'S_TIMER'
-		X13.Y360	'S_REC'
-		X13.Y470	'S_TS'
-		X13.Y560	'S_ECM'
-		X60.Y10		'S_LOGO1'
-		X260.Y5		'S_START'
-		X260.Y160	'S_TTF-EPG-NOW1'
-		X320.Y160	'S_TTF-EPG-NEXT1'
-		X320.Y5		'S_END'
-		X480.Y130   'S_HOUR1_2'
-		X480.Y195   'S_HOUR_12'
-		X480.Y260   'S_DP2'
-		X480.Y293   'S_MIN1_2'
-		X480.Y358   'S_MIN_12'
-		X480.Y470   'S_WEATHER_ICON_CURRENT'
-		X490.Y550   'S_WEATHER_TEMP_CURRENT'
-		X550.Y470   'S_WEATHER_CITY'
-		X520.Y840	'S_DURATION'
-		X580.Y5		'HST'
-		X580.Y924	'RES1024x600'
-	}
-	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL1'
-		Row11.Col03	'S_EPGBAR2'
-	}
-	Layer 3 {
-		X1.Y1		'BG'
-	}
-}
-
-Layout PNG1024x600_user04_normal {
-	Layer 0 {
-		X1.Y1		'BG1'
-	}
-	layer 1 {
-		row01.col01	'OSCamLINE02'
-		row02.col01	'OSCamLINE03'
-		row03.col01	'OSCamLINE06'
-		row04.col01	'OSCamLINE07'
-		row05.col01	'OSCamLINE08'
-		row06.col01	'OSCamLINE09'
-		row07.col01	'OSCamLINE10'
-		row08.col01	'OSCamLINE11'
-		row09.col01	'OSCamLINE12'
-		row10.col01	'OSCamLINE13'
-		row11.col01	'OSCamLINE14'
-		row12.col01	'OSCamLINE15'
-		row13.col01	'OSCamLINE16'
-		row14.col01	'OSCamLINE17'
-		row15.col01	'OSCamLINE18'
-		row16.col01	'OSCamLINE19'
-		row17.col01	'OSCamLINE20'
-		row18.col01	'OSCamLINE21'
-		row19.col01	'OSCamLINE22'
-		row20.col01	'OSCamLINE23'
-		row21.col01	'OSCamLINE24'
-		row22.col01	'OSCamLINE25'
-		row23.col01	'OSCamLINE26'
-		row24.col01	'OSCamLINE27'
-		row25.col01	'OSCamLINE28'
-		X580.Y5		'HST'
-	}
-	Layer 2 {
-		X1.Y1		'BG'
-	}
-}
-
-Layout PNG1024x600_standard_standby {
-	layer 0 {
-		X1.Y1		'BG1'
-	}
-	layer 1 {
-		X10.Y230	'S_TIMER'
-		X10.Y370	'S_REC'
-		X10.Y480	'S_TS'
-		X10.Y570	'S_ECM'
-		X70.Y12		'TAGDATUM-TTF1'
-		X160.Y230	'S_STANDBY_HOUR1_'
-		X160.Y354	'S_STANDBY_HOUR_1'
-		X160.Y475	'S_STANDBY_DP'
-		X160.Y538	'S_STANDBY_MIN1_'
-		X160.Y661	'S_STANDBY_MIN_1'
-		X370.Y100   'S_WEATHER_ICON_CURRENT'
-		X450.Y50    'S_WEATHER_TEMP_CURRENT'
-		X520.Y10    'S_WEATHER_CITY'
-		X370.Y250   'S_WEATHER_TEMP_LATER_MAX1'
-		X420.Y293   'S_WEATHER_ICON_LATER1'
-		X495.Y250   'S_WEATHER_TEMP_LATER_MIN1'
-		X540.Y250   'S_WEATHER_DAY1'
-		X370.Y430   'S_WEATHER_TEMP_LATER_MAX2'
-		X420.Y473   'S_WEATHER_ICON_LATER2'
-		X495.Y430   'S_WEATHER_TEMP_LATER_MIN2'
-		X540.Y430   'S_WEATHER_DAY2'
-		X370.Y610   'S_WEATHER_TEMP_LATER_MAX3'
-		X420.Y653   'S_WEATHER_ICON_LATER3'
-		X495.Y610   'S_WEATHER_TEMP_LATER_MIN3'
-		X540.Y610   'S_WEATHER_DAY3'
-		X370.Y790   'S_WEATHER_TEMP_LATER_MAX4'
-		X420.Y833   'S_WEATHER_ICON_LATER4'
-		X495.Y790   'S_WEATHER_TEMP_LATER_MIN4'
-		X540.Y790   'S_WEATHER_DAY4'
-		X580.Y5		'HST_STB'
-		X580.Y924	'RES1024x600'
-	}
-	layer 2 {
-		X1.Y1		'BG'
+		X1.Y1 'PNG_STANDARD_STB'
 	}
 }
 
 # Samsung Layout --------------------------------------------------------------------------- #
 
-Layout Samsung800x600_standard_normal {
+Layout Samsung800x600_standard {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x600_BG1'
 	}
 	Layer 1 {
-		X15.Y180	'S_TIMER'
-		X15.Y305	'S_REC'
-		X15.Y400	'S_TS'
-		X15.Y475	'S_ECM'
-        X15.Y560	'S_CI'
-        X15.Y650	'S_SOFTCAM'
-		X70.Y10		'S_LOGO'
-		X260.Y5		'S_START'
-		X260.Y155	'S_TTF-EPG-NOW'
-		X320.Y155	'S_TTF-EPG-NEXT'
-		X320.Y5		'S_END'
-		X510.Y35    'S_HOUR1_'
-		X510.Y80    'S_HOUR_1'
-		X510.Y122   'S_DP'
-		X510.Y140   'S_MIN1_'
-		X510.Y185   'S_MIN_1'
-		X480.Y300   'S_WEATHER_ICON_CURRENT'
-		X500.Y370   'S_WEATHER_TEMP_CURRENT'
-		X560.Y300   'S_WEATHER_CITY'
-		X520.Y625	'S_DURATION'
-		X580.Y5		'HST'
-		X580.Y700	'RES800x600'
+		X15.Y220 'S_TIMER'
+		X15.Y360 'S_REC'
+		X15.Y470 'S_TS'
+		X15.Y560 'S_ECM'
+		X70.Y10 'S_LOGO'
+		X260.Y5 'S_START'
+		X260.Y155 'S_TTF-EPG-NOW'
+		X320.Y155 'S_TTF-EPG-NEXT'
+		X320.Y5 'S_END'
+		X510.Y35 'S_HOUR1_'
+		X510.Y80 'S_HOUR_1'
+		X510.Y122 'S_DP'
+		X510.Y140 'S_MIN1_'
+		X510.Y185 'S_MIN_1'
+		X480.Y300 'S_WEATHER_ICON_CURRENT'
+		X500.Y370 'S_WEATHER_TEMP_CURRENT'
+		X560.Y300 'S_WEATHER_CITY'
+		X520.Y625 'S_DURATION'
+		X580.Y5 'HST'
+		X580.Y700 'RES800x600'
 	}
 	Layer 2 {
-		X70.Y10		'S_TTF-CHANNEL'
-		Row11.Col03	'S_EPGBAR'
+		X70.Y10 'S_TTF-CHANNEL'
+		Row11.Col03 'S_EPGBAR'
 	}
 	Layer 3 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x600_BG'
 	}
 }
 
-Layout Samsung800x480_standard_normal {
+Layout Samsung800x480_standard {
 	Layer 0 {
-		X1.Y1		'BG1'
-	}
-	 Layer 1 {
-		X10.Y220	'S_TIMER'
-		X10.Y360	'S_REC'
-		X10.Y470	'S_TS'
-		X10.Y560	'S_ECM'
-		X40.Y10		'S_LOGO'
-		X205.Y5		'S_START'
-		X205.Y155	'S_TTF-EPG-NOW'
-		X260.Y155	'S_TTF-EPG-NEXT'
-		X260.Y5		'S_END'
-		X400.Y35    'S_HOUR1_'
-		X400.Y80    'S_HOUR_1'
-		X400.Y122   'S_DP'
-		X400.Y140   'S_MIN1_'
-		X400.Y185   'S_MIN_1'
-		X370.Y300   'S_WEATHER_ICON_CURRENT'
-		X390.Y370   'S_WEATHER_TEMP_CURRENT'
-		X450.Y300   'S_WEATHER_CITY'
-		X410.Y625	'S_DURATION'
-		X460.Y5		'HST'
-		X460.Y700	'RES800x480'
-	}
-	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL'
-		Row09.Col03	'S_EPGBAR'
-	}
-	Layer 3 {
-		X1.Y1		'BG'
-	}
-}
-
-Layout Samsung1024x600_standard_normal {
-	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x480_BG1'
 	}
 	Layer 1 {
-		X13.Y220	'S_TIMER'
-		X13.Y360	'S_REC'
-		X13.Y470	'S_TS'
-		X13.Y560	'S_ECM'
-		X60.Y10		'S_LOGO1'
-		X260.Y5		'S_START'
-		X260.Y160	'S_TTF-EPG-NOW1'
-		X320.Y160	'S_TTF-EPG-NEXT1'
-		X320.Y5		'S_END'
-		X480.Y130	'S_HOUR1_2'
-		X480.Y195	'S_HOUR_12'
-		X480.Y260	'S_DP2'
-		X480.Y293	'S_MIN1_2'
-		X480.Y358	'S_MIN_12'
-		X480.Y470   'S_WEATHER_ICON_CURRENT'
-		X490.Y550   'S_WEATHER_TEMP_CURRENT'
-		X550.Y470   'S_WEATHER_CITY'
-		X520.Y840	'S_DURATION'
-		X580.Y5		'HST'
-		X580.Y924	'RES1024x600'
+		X10.Y220 'S_TIMER'
+		X10.Y360 'S_REC'
+		X10.Y470 'S_TS'
+		X10.Y560 'S_ECM'
+		X40.Y10 'S_LOGO'
+		X205.Y5 'S_START'
+		X205.Y155 'S_TTF-EPG-NOW'
+		X260.Y155 'S_TTF-EPG-NEXT'
+		X260.Y5 'S_END'
+		X400.Y35 'S_HOUR1_'
+		X400.Y80 'S_HOUR_1'
+		X400.Y122 'S_DP'
+		X400.Y140 'S_MIN1_'
+		X400.Y185 'S_MIN_1'
+		X370.Y300 'S_WEATHER_ICON_CURRENT'
+		X390.Y370 'S_WEATHER_TEMP_CURRENT'
+		X450.Y300 'S_WEATHER_CITY'
+		X410.Y625 'S_DURATION'
+		X460.Y5 'HST'
+		X460.Y700 'RES800x480'
 	}
 	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL1'
-		Row11.Col03	'S_EPGBAR2'
+		X60.Y10 'S_TTF-CHANNEL'
+		Row09.Col03 'S_EPGBAR'
 	}
 	Layer 3 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x480_BG'
 	}
 }
 
-Layout Samsung800x600_user04_normal {
+Layout Samsung1024x600_standard {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S1024x600_BG1'
+	}
+	Layer 1 {
+		X13.Y220 'S_TIMER'
+		X13.Y360 'S_REC'
+		X13.Y470 'S_TS'
+		X13.Y560 'S_ECM'
+		X60.Y10 'S_LOGO1'
+		X260.Y5 'S_START'
+		X260.Y160 'S_TTF-EPG-NOW1'
+		X320.Y160 'S_TTF-EPG-NEXT1'
+		X320.Y5 'S_END'
+		X480.Y130 'S_HOUR1_'
+		X480.Y195 'S_HOUR_1'
+		X480.Y260 'S_DP'
+		X480.Y293 'S_MIN1_'
+		X480.Y358 'S_MIN_1'
+		X480.Y470 'S_WEATHER_ICON_CURRENT'
+		X490.Y550 'S_WEATHER_TEMP_CURRENT'
+		X550.Y470 'S_WEATHER_CITY'
+		X520.Y840 'S_DURATION'
+		X580.Y5 'HST'
+		X580.Y924 'RES1024x600'
+	}
+	Layer 2 {
+		X60.Y10 'S_TTF-CHANNEL1'
+		Row11.Col03 'S_EPGBAR2'
+	}
+	Layer 3 {
+		X1.Y1 'S1024x600_BG'
+	}
+}
+
+Layout Samsung800x600_user04 {
+	Layer 0 {
+		X1.Y1 'S800x600_BG1'
 	}
 	layer 1 {
 		row01.col01	'OSCamLINE02'
@@ -2481,16 +2156,16 @@ Layout Samsung800x600_user04_normal {
 		row23.col01	'OSCamLINE26'
 		row24.col01	'OSCamLINE27'
 		row25.col01	'OSCamLINE28'
-		X580.Y5		'HST'
+		X580.Y5 'HST'
 	}
 	Layer 2 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x600_OSCAM'
 	}
 }
 
-Layout Samsung800x480_user04_normal {
+Layout Samsung800x480_user04 {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x480_BG1'
 	}
 	layer 1 {
 		row01.col01	'OSCamLINE02'
@@ -2518,16 +2193,16 @@ Layout Samsung800x480_user04_normal {
 		row23.col01	'OSCamLINE26'
 		row24.col01	'OSCamLINE27'
 		row25.col01	'OSCamLINE28'
-		X460.Y5		'HST'
+		X460.Y5 'HST'
 	}
 	Layer 2 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x480_OSCAM'
 	}
 }
 
-Layout Samsung1024x600_user04_normal {
+Layout Samsung1024x600_user04 {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S1024x600_BG1'
 	}
 	layer 1 {
 		row01.col01	'OSCamLINE02'
@@ -2555,229 +2230,228 @@ Layout Samsung1024x600_user04_normal {
 		row23.col01	'OSCamLINE26'
 		row24.col01	'OSCamLINE27'
 		row25.col01	'OSCamLINE28'
-		X580.Y5		'HST'
+		X580.Y5 'HST'
 	}
 	Layer 2 {
-		X1.Y1		'BG'
+		X1.Y1 'S1024x600_OSCAM'
 	}
 }
 
 Layout Samsung800x600_standard_radio {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x600_BG1'
 	}
 	Layer 1 {
-		X15.Y180	'S_TIMER'
-		X15.Y305	'S_REC'
-		X15.Y400	'S_TS'
-		X15.Y475	'S_ECM'
-        X15.Y560	'S_CI'
-        X15.Y650	'S_SOFTCAM'
-		X70.Y10		'S_LOGO'
-		X260.Y5		'S_START'
-		X260.Y155	'S_TTF-EPG-NOW'
-		X320.Y155	'S_TTF-EPG-NEXT'
-		X320.Y5		'S_END'
-		X510.Y35    'S_HOUR1_'
-		X510.Y80    'S_HOUR_1'
-		X510.Y122   'S_DP'
-		X510.Y140   'S_MIN1_'
-		X510.Y185   'S_MIN_1'
-		X480.Y300   'S_WEATHER_ICON_CURRENT'
-		X500.Y370   'S_WEATHER_TEMP_CURRENT'
-		X560.Y300   'S_WEATHER_CITY'
-		X520.Y625	'S_DURATION'
-		X580.Y5		'HST'
-		X580.Y700	'RES800x600'
+		X15.Y220 'S_TIMER'
+		X15.Y360 'S_REC'
+		X15.Y470 'S_TS'
+		X15.Y560 'S_ECM'
+		X70.Y10 'S_LOGO'
+		X260.Y5 'S_START'
+		X260.Y155 'S_TTF-EPG-NOW'
+		X320.Y155 'S_TTF-EPG-NEXT'
+		X320.Y5 'S_END'
+		X510.Y35 'S_HOUR1_'
+		X510.Y80 'S_HOUR_1'
+		X510.Y122 'S_DP'
+		X510.Y140 'S_MIN1_'
+		X510.Y185 'S_MIN_1'
+		X480.Y300 'S_WEATHER_ICON_CURRENT'
+		X500.Y370 'S_WEATHER_TEMP_CURRENT'
+		X560.Y300 'S_WEATHER_CITY'
+		X520.Y625 'S_DURATION'
+		X580.Y5 'HST'
+		X580.Y700 'RES800x600'
 	}
 	Layer 2 {
-		X70.Y10		'S_TTF-CHANNEL'
-		Row11.Col03	'S_EPGBAR'
+		X70.Y10 'S_TTF-CHANNEL'
+		Row11.Col03 'S_EPGBAR'
 	}
 	Layer 3 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x600_BG'
 	}
 }
 
 Layout Samsung800x480_standard_radio {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x480_BG1'
 	}
 	Layer 1 {
-		X10.Y220	'S_TIMER'
-		X10.Y360	'S_REC'
-		X10.Y470	'S_TS'
-		X10.Y560	'S_ECM'
-		X40.Y10		'S_LOGO'
-		X205.Y5		'S_START'
-		X205.Y155	'S_TTF-EPG-NOW'
-		X260.Y155	'S_TTF-EPG-NEXT'
-		X260.Y5		'S_END'
-		X400.Y35    'S_HOUR1_'
-		X400.Y80    'S_HOUR_1'
-		X400.Y122   'S_DP'
-		X400.Y140   'S_MIN1_'
-		X400.Y185   'S_MIN_1'
-		X370.Y300   'S_WEATHER_ICON_CURRENT'
-		X390.Y370   'S_WEATHER_TEMP_CURRENT'
-		X450.Y300   'S_WEATHER_CITY'
-		X410.Y625	'S_DURATION'
-		X460.Y5		'HST'
-		X460.Y700	'RES800x480'
+		X10.Y220 'S_TIMER'
+		X10.Y360 'S_REC'
+		X10.Y470 'S_TS'
+		X10.Y560 'S_ECM'
+		X40.Y10 'S_LOGO'
+		X205.Y5 'S_START'
+		X205.Y155 'S_TTF-EPG-NOW'
+		X260.Y155 'S_TTF-EPG-NEXT'
+		X260.Y5 'S_END'
+		X400.Y35 'S_HOUR1_'
+		X400.Y80 'S_HOUR_1'
+		X400.Y122 'S_DP'
+		X400.Y140 'S_MIN1_'
+		X400.Y185 'S_MIN_1'
+		X370.Y300 'S_WEATHER_ICON_CURRENT'
+		X390.Y370 'S_WEATHER_TEMP_CURRENT'
+		X450.Y300 'S_WEATHER_CITY'
+		X410.Y625 'S_DURATION'
+		X460.Y5 'HST'
+		X460.Y700 'RES800x480'
 	}
 	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL'
-		Row09.Col03	'S_EPGBAR'
+		X60.Y10 'S_TTF-CHANNEL'
+		Row09.Col03 'S_EPGBAR'
 	}
 	Layer 3 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x480_BG'
 	}
 }
 
 Layout Samsung1024x600_standard_radio {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S1024x600_BG1'
 	}
 	Layer 1 {
-		X13.Y220	'S_TIMER'
-		X13.Y360	'S_REC'
-		X13.Y470	'S_TS'
-		X13.Y560	'S_ECM'
-		X60.Y10		'S_LOGO1'
-		X260.Y5		'S_START'
-		X260.Y160	'S_TTF-EPG-NOW1'
-		X320.Y160	'S_TTF-EPG-NEXT1'
-		X320.Y5		'S_END'
-		X480.Y130   'S_HOUR1_2'
-		X480.Y195   'S_HOUR_12'
-		X480.Y260   'S_DP2'
-		X480.Y293   'S_MIN1_2'
-		X480.Y358   'S_MIN_12'
-		X480.Y470   'S_WEATHER_ICON_CURRENT'
-		X490.Y550   'S_WEATHER_TEMP_CURRENT'
-		X550.Y470   'S_WEATHER_CITY'
-		X520.Y840	'S_DURATION'
-		X580.Y5		'HST'
-		X580.Y924	'RES1024x600'
+		X13.Y220 'S_TIMER'
+		X13.Y360 'S_REC'
+		X13.Y470 'S_TS'
+		X13.Y560 'S_ECM'
+		X60.Y10 'S_LOGO1'
+		X260.Y5 'S_START'
+		X260.Y160 'S_TTF-EPG-NOW1'
+		X320.Y160 'S_TTF-EPG-NEXT1'
+		X320.Y5 'S_END'
+		X480.Y130 'S_HOUR1_'
+		X480.Y195 'S_HOUR_1'
+		X480.Y260 'S_DP'
+		X480.Y293 'S_MIN1_'
+		X480.Y358 'S_MIN_1'
+		X480.Y470 'S_WEATHER_ICON_CURRENT'
+		X490.Y550 'S_WEATHER_TEMP_CURRENT'
+		X550.Y470 'S_WEATHER_CITY'
+		X520.Y840 'S_DURATION'
+		X580.Y5 'HST'
+		X580.Y924 'RES1024x600'
 	}
 	Layer 2 {
-		X60.Y10		'S_TTF-CHANNEL1'
-		Row11.Col03	'S_EPGBAR2'
+		X60.Y10  'S_TTF-CHANNEL1'
+		Row11.Col03 'S_EPGBAR2'
 	}
 	Layer 3 {
-		X1.Y1		'BG'
+		X1.Y1 'S1024x600_BG'
 	}
 }
 
 Layout Samsung800x600_standard_standby {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x600_STB1'
 	}
 	layer 1 {
-		X17.Y180	'S_TIMER'
-		X17.Y305	'S_REC'
-		X17.Y400	'S_TS'
-		X17.Y475	'S_ECM'
-        X17.Y560	'S_CI'
-        X17.Y650	'S_SOFTCAM'
-		X70.Y0		'TAGDATUM-TTF'
-		X160.Y123	'S_STANDBY_HOUR1_'
-		X160.Y244	'S_STANDBY_HOUR_1'
-		X160.Y365	'S_STANDBY_DP'
-		X160.Y427	'S_STANDBY_MIN1_'
-		X160.Y548	'S_STANDBY_MIN_1'
-		X370.Y100    'S_WEATHER_ICON_CURRENT'
-		X450.Y50    'S_WEATHER_TEMP_CURRENT'
-		X520.Y10    'S_WEATHER_CITY'
-		X370.Y250   'S_WEATHER_TEMP_LATER_MAX1'
-		X420.Y293   'S_WEATHER_ICON_LATER1'
-		X495.Y250   'S_WEATHER_TEMP_LATER_MIN1'
-		X540.Y250   'S_WEATHER_DAY1'
-		X370.Y430   'S_WEATHER_TEMP_LATER_MAX2'
-		X420.Y473   'S_WEATHER_ICON_LATER2'
-		X495.Y430   'S_WEATHER_TEMP_LATER_MIN2'
-		X540.Y430   'S_WEATHER_DAY2'
-		X370.Y610   'S_WEATHER_TEMP_LATER_MAX3'
-		X420.Y653   'S_WEATHER_ICON_LATER3'
-		X495.Y610   'S_WEATHER_TEMP_LATER_MIN3'
-		X540.Y610   'S_WEATHER_DAY3'
-		X370.Y790   'S_WEATHER_TEMP_LATER_MAX4'
-		X420.Y833   'S_WEATHER_ICON_LATER4'
-		X495.Y790   'S_WEATHER_TEMP_LATER_MIN4'
-		X540.Y790   'S_WEATHER_DAY4'
-		X580.Y5		'HST_STB'
-		X580.Y700	'RES800x600'
+		X17.Y220 'S_TIMER'
+		X17.Y360 'S_REC'
+		X17.Y470 'S_TS'
+		X17.Y560 'S_ECM'
+		X70.Y0 'TAGDATUM-TTF'
+		X160.Y123 'S_STANDBY_HOUR1_'
+		X160.Y244 'S_STANDBY_HOUR_1'
+		X160.Y365 'S_STANDBY_DP'
+		X160.Y427 'S_STANDBY_MIN1_'
+		X160.Y548 'S_STANDBY_MIN_1'
+		X370.Y10 'S_WEATHER_ICON_CURRENT'
+		X450.Y50 'S_WEATHER_TEMP_CURRENT'
+		X520.Y10 'S_WEATHER_CITY'
+		X370.Y250 'S_WEATHER_TEMP_LATER_MAX1'
+		X420.Y293 'S_WEATHER_ICON_LATER1'
+		X495.Y250 'S_WEATHER_TEMP_LATER_MIN1'
+		X540.Y250 'S_WEATHER_DAY1'
+		X370.Y430 'S_WEATHER_TEMP_LATER_MAX2'
+		X420.Y473 'S_WEATHER_ICON_LATER2'
+		X495.Y430 'S_WEATHER_TEMP_LATER_MIN2'
+		X540.Y430 'S_WEATHER_DAY2'
+		X370.Y610 'S_WEATHER_TEMP_LATER_MAX3'
+		X420.Y653 'S_WEATHER_ICON_LATER3'
+		X495.Y610 'S_WEATHER_TEMP_LATER_MIN3'
+		X540.Y610 'S_WEATHER_DAY3'
+		X370.Y790 'S_WEATHER_TEMP_LATER_MAX4'
+		X420.Y833 'S_WEATHER_ICON_LATER4'
+		X495.Y790 'S_WEATHER_TEMP_LATER_MIN4'
+		X540.Y790 'S_WEATHER_DAY4'
+		X580.Y5 'HST_STB'
+		X580.Y700 'RES800x600'
 	}
 	layer 2 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x600_STB'
 	}
 }
 
 Layout Samsung800x480_standard_standby {
 	Layer 0 {
-		X1.Y1		'BG1'
+		X1.Y1 'S800x480_STB1'
 	}
 	layer 1 {
-		X10.Y220	'S_TIMER'
-		X10.Y360	'S_REC'
-		X10.Y470	'S_TS'
-		X10.Y560	'S_ECM'
-		X70.Y0		'TAGDATUM-TTF'
-		X160.Y123	'S_STANDBY_HOUR1_'
-		X160.Y244	'S_STANDBY_HOUR_1'
-		X160.Y365	'S_STANDBY_DP'
-		X160.Y427	'S_STANDBY_MIN1_'
-		X160.Y548	'S_STANDBY_MIN_1'
-		X350.Y270   'S_WEATHER_ICON_CURRENT'
-		X380.Y350   'S_WEATHER_TEMP_CURRENT'
-		X440.Y270   'S_WEATHER_CITY'
-		X460.Y5		'HST_STB'
-		X460.Y700	'RES800x480'
+		X10.Y220 'S_TIMER'
+		X10.Y360 'S_REC'
+		X10.Y470 'S_TS'
+		X10.Y560 'S_ECM'
+		X70.Y0 'TAGDATUM-TTF'
+		X160.Y123 'S_STANDBY_HOUR1_'
+		X160.Y244 'S_STANDBY_HOUR_1'
+		X160.Y365 'S_STANDBY_DP'
+		X160.Y427 'S_STANDBY_MIN1_'
+		X160.Y548 'S_STANDBY_MIN_1'
+		X350.Y270 'S_WEATHER_ICON_CURRENT'
+		X380.Y350 'S_WEATHER_TEMP_CURRENT'
+		X440.Y270 'S_WEATHER_CITY'
+		X460.Y5 'HST_STB'
+		X460.Y700 'RES800x480'
 	}
 	layer 2 {
-		X1.Y1		'BG'
+		X1.Y1 'S800x480_STB'
 	}
 }
 
 Layout Samsung1024x600_standard_standby {
 	layer 0 {
-		X1.Y1		'STB1'
+		X1.Y1 'S1024x600_STB1'
 	}
 	layer 1 {
-		X10.Y230	'S_TIMER'
-		X10.Y370	'S_REC'
-		X10.Y480	'S_TS'
-		X10.Y570	'S_ECM'
-		X70.Y12		'TAGDATUM-TTF1'
-		X160.Y230	'S_STANDBY_HOUR1_'
-		X160.Y354	'S_STANDBY_HOUR_1'
-		X160.Y475	'S_STANDBY_DP'
-		X160.Y538	'S_STANDBY_MIN1_'
-		X160.Y661	'S_STANDBY_MIN_1'
-		X370.Y100   'S_WEATHER_ICON_CURRENT'
-		X450.Y50    'S_WEATHER_TEMP_CURRENT'
-		X520.Y10    'S_WEATHER_CITY'
-		X370.Y250   'S_WEATHER_TEMP_LATER_MAX1'
-		X420.Y293   'S_WEATHER_ICON_LATER1'
-		X495.Y250   'S_WEATHER_TEMP_LATER_MIN1'
-		X540.Y250   'S_WEATHER_DAY1'
-		X370.Y430   'S_WEATHER_TEMP_LATER_MAX2'
-		X420.Y473   'S_WEATHER_ICON_LATER2'
-		X495.Y430   'S_WEATHER_TEMP_LATER_MIN2'
-		X540.Y430   'S_WEATHER_DAY2'
-		X370.Y610   'S_WEATHER_TEMP_LATER_MAX3'
-		X420.Y653   'S_WEATHER_ICON_LATER3'
-		X495.Y610   'S_WEATHER_TEMP_LATER_MIN3'
-		X540.Y610   'S_WEATHER_DAY3'
-		X370.Y790   'S_WEATHER_TEMP_LATER_MAX4'
-		X420.Y833   'S_WEATHER_ICON_LATER4'
-		X495.Y790   'S_WEATHER_TEMP_LATER_MIN4'
-		X540.Y790   'S_WEATHER_DAY4'
-		X580.Y5		'HST_STB'
-		X580.Y924	'RES1024x600'
+		X10.Y230 'S_TIMER'
+		X10.Y370 'S_REC'
+		X10.Y480 'S_TS'
+		X10.Y570 'S_ECM'
+		X70.Y12 'TAGDATUM-TTF1'
+		X160.Y230 'S_STANDBY_HOUR1_'
+		X160.Y354 'S_STANDBY_HOUR_1'
+		X160.Y475 'S_STANDBY_DP'
+		X160.Y538 'S_STANDBY_MIN1_'
+		X160.Y661 'S_STANDBY_MIN_1'
+		X370.Y10 'S_WEATHER_ICON_CURRENT'
+		X450.Y50 'S_WEATHER_TEMP_CURRENT'
+		X520.Y10 'S_WEATHER_CITY'
+		X370.Y250 'S_WEATHER_TEMP_LATER_MAX1'
+		X420.Y293 'S_WEATHER_ICON_LATER1'
+		X495.Y250 'S_WEATHER_TEMP_LATER_MIN1'
+		X540.Y250 'S_WEATHER_DAY1'
+		X370.Y430 'S_WEATHER_TEMP_LATER_MAX2'
+		X420.Y473 'S_WEATHER_ICON_LATER2'
+		X495.Y430 'S_WEATHER_TEMP_LATER_MIN2'
+		X540.Y430 'S_WEATHER_DAY2'
+		X370.Y610 'S_WEATHER_TEMP_LATER_MAX3'
+		X420.Y653 'S_WEATHER_ICON_LATER3'
+		X495.Y610 'S_WEATHER_TEMP_LATER_MIN3'
+		X540.Y610 'S_WEATHER_DAY3'
+		X370.Y790 'S_WEATHER_TEMP_LATER_MAX4'
+		X420.Y833 'S_WEATHER_ICON_LATER4'
+		X495.Y790 'S_WEATHER_TEMP_LATER_MIN4'
+		X540.Y790 'S_WEATHER_DAY4'
+		X580.Y5 'HST_STB'
+		X580.Y924 'RES1024x600'
 	}
 	layer 2 {
-		X1.Y1		'BG'
+		X1.Y1 'S1024x600_STB_T'
+	}
+	Layer 3 {
+		X1.Y1 'S1024x600_STB_C'
 	}
 }
 
@@ -2788,10 +2462,14 @@ Variables {
 	SYSICONS	'/share/tuxbox/neutrino/icons/'
 	FWEATHER	'/var/etc/.lcd-weather'
 	FCLOCK		'/var/etc/.lcd-clock_a'
-	COLOR1		'2222cc'
+	COLOR1		'EEEEEE'
 	COLOR2		'999999'
-	COLOR3		'2222ccAA'
+	COLOR3		'333333AA'
 	COLOR4		'888888'
+
+	BGROUND1	'/var/lcd/background_800x480.png'
+	BGROUND2	'/var/lcd/background_800x600.png'
+	BGROUND3	'/var/lcd/background_1024x600.png'
 
 	# color for layout "d-box2" {
 		#DBOX2COL	'F44336'	# red
@@ -2805,7 +2483,8 @@ Variables {
 
 # --------------------------------------------------------------------------- #
 
-Display file::readline('/tmp/lcd/layout', 1) . file::readline('/tmp/lcd/layout', 2) . '_' . file::readline('/tmp/lcd/layout', 3). '_' . file::readline('/tmp/lcd/layout', 4)
-Layout  file::readline('/tmp/lcd/layout', 1) . file::readline('/tmp/lcd/layout', 2) . '_' . file::readline('/tmp/lcd/layout', 3). '_' . file::readline('/tmp/lcd/layout', 4)
+Display	file::readline('/tmp/lcd/layout', 1)
+
+Layout	file::readline('/tmp/lcd/layout', 1)
 
 # --------------------------------------------------------------------------- #
