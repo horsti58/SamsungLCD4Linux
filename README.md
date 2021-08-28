@@ -6,7 +6,7 @@ Die config Dateien sind passend für folgende Neutrino-Images
 
 Tango:  Receiver AX/Mutant 4K HD51, BRE2ZE4K
 Tuxbox: Receiver AX/Mutant 4K HD51
-Ni:     Receiver AX/Mutant 4K HD51, BRE2ZE4K, CST
+Ni:     Receiver AX/Mutant 4K HD61, HD51, BRE2ZE4K, CST
 
 Ideen, Vorlagen und Bilder Quellen:
 
