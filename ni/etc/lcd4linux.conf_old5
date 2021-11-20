@@ -1365,7 +1365,7 @@ Widget S_LOGO {
 	center		108
 	width		780
 	height		108
-	#scale		270
+	scale		270
 }
 
 Widget S_LOGO1 {
@@ -1376,7 +1376,7 @@ Widget S_LOGO1 {
 	center		108
 	width		1004
 	height		108
-	#scale		270
+	scale		270
 }
 
 Widget S_TTF-CHANNEL {
