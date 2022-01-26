@@ -21,4 +21,4 @@ Deswegen werden in Layer 0 transparente Bilder vorgelegt,
 in Abhängigkeit der eingestellten Helligkeit im LCD4Linux Menü.
 
 13.07.2021 erweitere "ci"" in ni und ni_grey
-20.11.2021 wegfall Scale beim Logo, Kompromiß wegen webtv
+20.11.2021 Wegfall scale beim Logo, Kompromiß wegen webtv
