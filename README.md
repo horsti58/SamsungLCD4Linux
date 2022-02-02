@@ -22,3 +22,4 @@ in Abhängigkeit der eingestellten Helligkeit im LCD4Linux Menü.
 
 13.07.2021 erweitere "ci"" in ni und ni_grey
 20.11.2021 Wegfall scale beim Logo, Kompromiß wegen webtv
+02.02.2022 einige Fixe, ECM und Ci+ Icon-Plätze getauscht
