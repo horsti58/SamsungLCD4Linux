@@ -1317,7 +1317,7 @@ Widget S_TUNERTXT {
 	reload		1
 	inverted	0
 	size		0
-	width		90
+	width		105
 	height		25
 	align		'C'
 }
@@ -1338,58 +1338,6 @@ Widget S_TUNER1 {
 	reload		1
 	align		'R'
 	scale		200
-}
-
-Widget S_TUNERTXT1 {
-	class		'Truetype'
-	expression	'SIG:'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'58585800'
-	#update		3000
-	reload		1
-	inverted	0
-	size		0
-	width		60
-	height		25
-	align		'C'
-}
-
-Widget S_TUNER_SIG {
-	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1  ? '' : file::readline('/tmp/lcd/tuner_sig', 1) . '%'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'FFFFFF00'
-	update		3000
-	reload		1
-	width		70
-	height		25
-	align		'C'
-}
-
-Widget S_TUNERTXT2 {
-	class		'Truetype'
-	expression	'SNR:'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'58585800'
-	#update		3000
-	reload		1
-	inverted	0
-	size		0
-	width		60
-	height		25
-	align		'C'
-}
-
-Widget S_TUNER_SNR {
-	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1  ? '' : file::readline('/tmp/lcd/tuner_snr', 1) . '%'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'FFFFFF00'
-	update		3000
-	reload		1
-	width		70
-	height		25
-	align		'C'
 }
 
 Widget S_REC {
@@ -1449,7 +1397,7 @@ Widget S_CAMD {
 
 Widget S_LOGO {
 	class		'Image'
-	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'menu.png' : file::readline('/tmp/lcd/logo', 1)
+	file		file::readline('/tmp/lcd/logo', 1)
 	update		3000
 	reload		1
 	center		108
@@ -1460,7 +1408,7 @@ Widget S_LOGO {
 
 Widget S_LOGO1 {
 	class		'Image'
-	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'menu.png' : file::readline('/tmp/lcd/logo', 1)
+	file		file::readline('/tmp/lcd/logo', 1)
 	update		3000
 	reload		1
 	center		108
@@ -1548,7 +1496,7 @@ Widget S_TTF-EPG-NOW1 {
 
 Widget S_TTF-EPG-NEXT {
 	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : (file::readline('/tmp/lcd/event', 2) le '' ? '' : substr(file::readline('/tmp/lcd/event', 2), 0, 30)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? file::readline('/tmp/lcd/menu', 1) : (file::readline('/tmp/lcd/event', 2) le '' ? '' : substr(file::readline('/tmp/lcd/event', 2), 0, 30)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'58585800'
 	update		3000
@@ -1562,7 +1510,7 @@ Widget S_TTF-EPG-NEXT {
 
 Widget S_TTF-EPG-NEXT1 {
 	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : (file::readline('/tmp/lcd/event', 2) le '' ? '' : substr(file::readline('/tmp/lcd/event', 2), 0, 35)
+	expression	file::exist('/tmp/lcd/menu') == 1 ? file::readline('/tmp/lcd/menu', 1) : (file::readline('/tmp/lcd/event', 2) le '' ? '' : substr(file::readline('/tmp/lcd/event', 2), 0, 35)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'58585800'
 	update		3000
@@ -1602,7 +1550,7 @@ Widget S_DURATION_BJ {
 	class		'Truetype'
 	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/duration', 2)
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'ff000000'
+	fcolor		'fd6d1300'
 	update		3000
 	reload		1
 	width		60
@@ -1614,7 +1562,7 @@ Widget S_DURATION_BE {
 	class		'Truetype'
 	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/duration', 3)
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'13ff0000'
+	fcolor		'fd6d1300'
 	update		3000
 	reload		1
 	width		60
@@ -1666,7 +1614,7 @@ Widget S_DURATION_BJ1 {
 	class		'Truetype'
 	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/duration', 2)
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'ff000000'
+	fcolor		'fd6d1300'
 	update		3000
 	reload		1
 	width		90
@@ -1678,7 +1626,7 @@ Widget S_DURATION_BE1 {
 	class		'Truetype'
 	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : file::readline('/tmp/lcd/duration', 3)
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'13ff0000'
+	fcolor		'fd6d1300'
 	update		3000
 	reload		1
 	width		90
@@ -1910,16 +1858,12 @@ Layout Samsung800x600_standard {
 		X17.Y560	'S_CAMD'
 		X17.Y710	'S_ECM'
 		X70.Y10		'S_LOGO'
-		X225.Y155	'S_TUNERTXT'
-		X222.Y250	'S_TUNER'
-		X225.Y310	'S_TUNERTXT1'
-		X222.Y370	'S_TUNER_SIG'
-		X225.Y440	'S_TUNERTXT2'
-		X222.Y500	'S_TUNER_SNR'
-		X222.Y600	'S_VFORMAT'
-		X222.Y645	'S_ASPECTRATIO'
-		X222.Y705	'S_DOLBY'
-		X222.Y750	'S_TXT'
+		X222.Y435	'S_VFORMAT'
+		X222.Y485	'S_ASPECTRATIO'
+		X222.Y550	'S_DOLBY'
+		X222.Y600	'S_TXT'
+		X222.Y650	'S_TUNERTXT'
+		X222.Y755	'S_TUNER'
 		X260.Y5		'S_START'
 		X260.Y205	'S_TTF-EPG-NOW'
 		X320.Y205	'S_TTF-EPG-NEXT'
@@ -1965,16 +1909,6 @@ Layout Samsung800x480_standard {
 		X10.Y560	'S_CAMD'
 		X10.Y710	'S_ECM'
 		X40.Y10		'S_LOGO'
-		X177.Y155	'S_TUNERTXT'
-		X174.Y250	'S_TUNER'
-		X177.Y310	'S_TUNERTXT1'
-		X174.Y370	'S_TUNER_SIG'
-		X177.Y440	'S_TUNERTXT2'
-		X174.Y500	'S_TUNER_SNR'
-		X174.Y600	'S_VFORMAT'
-		X174.Y645	'S_ASPECTRATIO'
-		X174.Y705	'S_DOLBY'
-		X174.Y750	'S_TXT'
 		X205.Y5		'S_START'
 		X205.Y205	'S_TTF-EPG-NOW'
 		X260.Y205	'S_TTF-EPG-NEXT'
@@ -2016,16 +1950,12 @@ Layout Samsung1024x600_standard {
 		X13.Y770	'S_CAMD'
 		X13.Y930	'S_ECM'
 		X60.Y10		'S_LOGO1'
-		X225.Y395	'S_TUNERTXT'
-		X222.Y490	'S_TUNER'
-		X225.Y550	'S_TUNERTXT1'
-		X222.Y610	'S_TUNER_SIG'
-		X225.Y680	'S_TUNERTXT2'
-		X222.Y740	'S_TUNER_SNR'
-		X222.Y820	'S_VFORMAT'
-		X222.Y865	'S_ASPECTRATIO'
-		X222.Y925	'S_DOLBY'
-		X222.Y970	'S_TXT'
+		X222.Y645	'S_VFORMAT'
+		X222.Y695	'S_ASPECTRATIO'
+		X222.Y760	'S_DOLBY'
+		X222.Y810	'S_TXT'
+		X222.Y860	'S_TUNERTXT'
+		X222.Y965	'S_TUNER'
 		X260.Y5		'S_START'
 		X260.Y205	'S_TTF-EPG-NOW1'
 		X320.Y205	'S_TTF-EPG-NEXT1'
