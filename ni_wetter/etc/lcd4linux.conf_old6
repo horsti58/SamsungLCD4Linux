@@ -499,19 +499,7 @@ Widget SS_WIND {
 	width		90
 	height		35
 	align		'L'
-	expression	file::exist(FWEATHER) == 0 ? '' : round(substr(file::readline(W . 'wind', 1), 0, strstr(file::readline(W . 'wind', 1), '|'))). ' m/s'
-	update		10000
-	reload		1
-}
-
-Widget SS_WIND1 {
-	class		'Truetype'
-	font		'/usr/share/fonts/ubuntu-l-webfont.ttf'
-	fcolor		'EEEEEE'
-	width		100
-	height		40
-	align		'L'
-	expression	file::exist(FWEATHER) == 0 ? '' : round(substr(file::readline(W . 'wind', 1), 0, strstr(file::readline(W . 'wind', 1), '|'))*3.6). ' km/h'
+	expression	file::exist(FWEATHER) == 0 ? '' : round(substr(file::readline(W . 'wind', 1), 0, strstr(file::readline(W . 'wind', 1), '|'))). ' km/h'
 	update		10000
 	reload		1
 }
@@ -1940,7 +1928,7 @@ Layout Samsung800x600_standard {
 		X480.Y240	'WEATHERICON_CURRENT'
 		X550.Y240	'TEMPERATURE_CURRENT1'
 		X505.Y320	'S_WIND'
-		X532.Y410	'SS_WIND1'
+		X532.Y410	'SS_WIND'
 		X480.Y500	'WEATHERICON_LATER'
 		X550.Y500	'TEMPERATURE_LATER1'
 		X510.Y10	'S_HOUR1_'
@@ -1995,7 +1983,7 @@ Layout Samsung800x480_standard {
 		X380.Y250	'WEATHERICON_CURRENT'
 		X445.Y250	'TEMPERATURE_CURRENT1'
 		X398.Y345	'S_WIND'
-		X425.Y435	'SS_WIND1'
+		X425.Y435	'SS_WIND'
 		X380.Y550	'WEATHERICON_LATER'
 		X445.Y550	'TEMPERATURE_LATER1'
 		X400.Y5		'S_HOUR1_'
@@ -2046,7 +2034,7 @@ Layout Samsung1024x600_standard {
 		X480.Y320	'WEATHERICON_CURRENT'
 		X550.Y320	'TEMPERATURE_CURRENT1'
 		X505.Y425	'S_WIND'
-		X532.Y515	'SS_WIND1'
+		X532.Y515	'SS_WIND'
 		X480.Y640	'WEATHERICON_LATER'
 		X550.Y640	'TEMPERATURE_LATER1'
 		X510.Y25	'S_HOUR1_'
