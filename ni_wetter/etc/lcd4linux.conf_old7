@@ -1485,7 +1485,7 @@ Widget S_TTF-CHANNEL {
 	class		'Truetype'
 	expression	file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1)
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'cccccc00'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	width		780
@@ -1497,7 +1497,7 @@ Widget S_TTF-CHANNEL1 {
 	class		'Truetype'
 	expression	file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1)
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'cccccc00'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	width		1004
@@ -1521,7 +1521,7 @@ Widget S_START {
 Widget S_END {
 	class		'Truetype'
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'cccccc00'
+	fcolor		'58585800'
 	size		0
 	width		200
 	height		50
@@ -1562,7 +1562,7 @@ Widget S_TTF-EPG-NEXT {
 	class		'Truetype'
 	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : (file::readline('/tmp/lcd/event', 2) le '' ? '' : substr(file::readline('/tmp/lcd/event', 2), 0, 30)
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'cccccc00'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	inverted	0
@@ -1576,7 +1576,7 @@ Widget S_TTF-EPG-NEXT1 {
 	class		'Truetype'
 	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : (file::readline('/tmp/lcd/event', 2) le '' ? '' : substr(file::readline('/tmp/lcd/event', 2), 0, 35)
 	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'cccccc00'
+	fcolor		'58585800'
 	update		3000
 	reload		1
 	width		824
@@ -2378,13 +2378,13 @@ Layout Samsung800x480_standby {
 		X160.Y376	'S_STANDBY_DP'
 		X160.Y427	'S_STANDBY_MIN1_'
 		X160.Y548	'S_STANDBY_MIN_1'
-		X395.Y140	'WEATHER_CITY1'
-		X385.Y460	'S_WIND'
-		X410.Y560	'SS_WIND'
-		X395.Y10	'WEATHERICON_CURRENT'
-		X405.Y70	'TEMPERATURE_CURRENT1'
-		X395.Y730	'WEATHERICON_LATER'
-		X405.Y670	'TEMPERATURE_LATER1'
+		X395.Y110	'WEATHER_CITY1'
+		X385.Y410	'S_WIND'
+		X410.Y510	'SS_WIND'
+		X395.Y040	'WEATHERICON_CURRENT'
+		X405.Y110	'TEMPERATURE_CURRENT1'
+		X395.Y710	'WEATHERICON_LATER'
+		X405.Y630	'TEMPERATURE_LATER1'
 		X460.Y5		'HST_STB'
 		X460.Y700	'RES800x480'
 	}
