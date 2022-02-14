@@ -142,6 +142,7 @@ Widget Pearl_DURATION_BJ {
 	height		20
 	update		5000
 	reload		1
+
 }
 
 Widget Pearl_DURATION_BE {
@@ -267,14 +268,14 @@ Widget Pearl_STRIPE {
 
 Widget Pearl_BAR {
 	class		'Image'
-	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'bar1.png' : ICONS . 'bar2.png'
-	update		5000
+	file		ICONS . 'bar2.png'
+	update		0
 	reload		1
 }
 
 Widget Pearl_DURATION1 {
 	class		'Truetype'
-	expression	'DURATION'
+	expression	'DURATION
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'484848'
 	align		'L'
@@ -528,21 +529,35 @@ Widget TEMPERATURE_LATER1 {
 
 Widget S_BAR {
 	class		'Image'
-	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'background/800x600/' . 'bar1.png' : ICONS . 'background/800x600/' . 'bar2.png'
-	update		5000
+	file		ICONS . 'background/800x600/' . 'bar4.png'
+	update		0
 	reload		1
 }
 
 Widget S_BAR1 {
 	class		'Image'
-	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'background/1024x600/' . 'bar1.png' : ICONS . 'background/1024x600/' . 'bar2.png'
-	update		5000
+	file		ICONS . 'background/1024x600/' . 'bar5.png'
+	update		0
 	reload		1
 }
 
 Widget S_BANNER {
 	class		'Image'
 	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'background/800x600/' . 'banner1.png' : ICONS . 'background/800x600/' . 'banner.png'
+	update		0
+	reload		1
+}
+
+Widget S8_DURATION {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . 'duration.png'
+	update		0
+	reload		1
+}
+
+Widget S_EVENT {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . 'event.png'
 	update		0
 	reload		1
 }
@@ -561,38 +576,16 @@ Widget S1024_STRIPE {
 	reload		1
 }
 
-Widget S_SERVICE2 {
-	class		'Truetype'
-	expression	'SERVICE'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'484848'
-	align		'L'
-	width		70
-	height		20
-	update		0
-	reload		1
-}
-
-Widget S_EVENT {
-	class		'Truetype'
-	expression	'EVENT'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'484848'
-	align		'L'
-	width		50
-	height		20
+Widget S_SERVICE {
+	class		'Image'
+	file		ICONS . 'background/800x600/' . 'service.png'
 	update		0
 	reload		1
 }
 
 Widget S_TIME {
-	class		'Truetype'
-	expression	'TIME'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'484848'
-	align		'L'
-	width		50
-	height		20
+	class		'Image'
+	file		ICONS . 'background/800x600/' . 'time.png'
 	update		0
 	reload		1
 }
@@ -763,7 +756,7 @@ Widget S_TUNERTXT {
 	inverted	0
 	size		0
 	width		90
-	height		20
+	height		25
 	align		'C'
 }
 
@@ -777,8 +770,26 @@ Widget S_TUNERTXT3 {
 	inverted	0
 	size		0
 	width		35
-	height		30
+	height		40
 	align		'C'
+}
+
+Widget S_TUNER {
+	class		'Image'
+	file		SYSICONS . 'tuner_0' . file::readline('/tmp/lcd/tuner', 1) . '.png'
+	update		4000
+	reload		1
+	align		'R'
+	scale		150
+}
+
+Widget S_TUNER1 {
+	class		'Image'
+	file		SYSICONS . 'tuner_' . file::readline('/tmp/lcd/tuner', 1) .'.png'
+	update		4000
+	reload		1
+	align		'R'
+	scale		200
 }
 
 Widget S_TUNERTXT1 {
@@ -791,7 +802,7 @@ Widget S_TUNERTXT1 {
 	inverted	0
 	size		0
 	width		60
-	height		20
+	height		25
 	align		'C'
 }
 
@@ -803,7 +814,7 @@ Widget S_TUNER_SIG {
 	update		3000
 	reload		1
 	width		80
-	height		30
+	height		40
 	align		'C'
 }
 
@@ -817,7 +828,7 @@ Widget S_TUNERTXT2 {
 	inverted	0
 	size		0
 	width		60
-	height		20
+	height		25
 	align		'C'
 }
 
@@ -829,7 +840,7 @@ Widget S_TUNER_SNR {
 	update		3000
 	reload		1
 	width		80
-	height		30
+	height		40
 	align		'C'
 }
 
@@ -891,7 +902,7 @@ Widget S_CAMD {
 Widget S_LOGO {
 	class		'Image'
 	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'menu.png' : file::readline('/tmp/lcd/logo', 1)
-	update		3300
+	update		3000
 	reload		1
 	center		108
 	width		780
@@ -902,7 +913,7 @@ Widget S_LOGO {
 Widget S_LOGO1 {
 	class		'Image'
 	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'menu.png' : file::readline('/tmp/lcd/logo', 1)
-	update		3300
+	update		3000
 	reload		1
 	center		108
 	width		1004
@@ -910,52 +921,64 @@ Widget S_LOGO1 {
 	#scale		270
 }
 
-Widget S_SERVICE {
+Widget S_TTF-CHANNEL {
 	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : (file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1))
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'ffffff'
-	update		3000
-	width		800
-	height		70
-	align		'C'
-	reload		1
-}
-
-Widget S_SERVICE1 {
-	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : (file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1))
+	expression	file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'58585800'
 	update		3000
 	reload		1
-	width		1024
+	width		780
+	height		70
+	align		'C'
+}
+
+Widget S_TTF-CHANNEL1 {
+	class		'Truetype'
+	expression	file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1)
+	font		file::readline('/tmp/lcd/font', 2)
+	fcolor		'58585800'
+	update		3000
+	reload		1
+	width		1004
+	height		90
+	align		'C'
+}
+
+Widget S_TTF-CHANNEL1 {
+	class		'Truetype'
+	expression	file::readline('/tmp/lcd/mode_logo', 1) == 1 ? '' : file::readline('/tmp/lcd/service', 1)
+	font		file::readline('/tmp/lcd/font', 2)
+	fcolor		'58585800'
+	update		3000
+	reload		1
+	width		1004
 	height		90
 	align		'C'
 }
 
 Widget S_START {
 	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1 | file::readline('/tmp/lcd/event', 1) le '' ? '' : file::readline('/tmp/lcd/start', 1)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'bbbbbb00'
 	size		0
 	width		200
 	height		50
 	align		'C'
+	expression	file::exist('/tmp/lcd/menu') == 1 | file::readline('/tmp/lcd/event', 1) le '' ? '' : file::readline('/tmp/lcd/start', 1)
 	update		3000
 	reload		1
 }
 
 Widget S_END {
 	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1 | file::readline('/tmp/lcd/event', 2) le '' ? '' : file::readline('/tmp/lcd/end', 1)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'88888800'
 	size		0
 	width		200
 	height		50
 	align		'C'
+	expression	file::exist('/tmp/lcd/menu') == 1 | file::readline('/tmp/lcd/event', 2) le '' ? '' : file::readline('/tmp/lcd/end', 1)
 	update		3000
 	reload		1
 }
@@ -1114,8 +1137,8 @@ Widget S_DURATION_BJ1 {
 	update		3000
 	reload		1
 	width		90
-	height		35
-	align		'R'
+	height		40
+	align		'C'
 }
 
 Widget S_DURATION_BE1 {
@@ -1126,8 +1149,8 @@ Widget S_DURATION_BE1 {
 	update		3000
 	reload		1
 	width		90
-	height		35
-	align		'L'
+	height		40
+	align		'C'
 }
 
 Widget S_DURATION_KPL1 {
@@ -1138,7 +1161,7 @@ Widget S_DURATION_KPL1 {
 	update		3000
 	reload		1
 	width		90
-	height		35
+	height		40
 	align		'C'
 }
 
@@ -1148,7 +1171,7 @@ Widget S_EPGBAR {
 	min		0
 	max		100
 	length		68
-	update		5000
+	update		3000
 	direction	'E'
 	foreground	'ff0000'
 }
@@ -1159,7 +1182,7 @@ Widget S_EPGBAR1 {
 	min		0
 	max		100
 	length		105
-	update		5000
+	update		3000
 	direction	'E'
 	foreground	'ff0000'
 }
@@ -1170,7 +1193,7 @@ Widget HST {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'585858'
 	width		30
-	height		15
+	height		20
 	align		'L'
 	update		4000
 	reload		1
@@ -1182,7 +1205,7 @@ Widget HST_STB {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'585858'
 	width		30
-	height		15
+	height		20
 	align		'L'
 	update		0
 	reload		1
@@ -1194,7 +1217,7 @@ Widget RES320x240 {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'585858'
 	width		90
-	height		15
+	height		20
 	align		'R'
 	update		0
 }
@@ -1205,7 +1228,7 @@ Widget RES800x480 {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'585858'
 	width		90
-	height		15
+	height		20
 	align		'R'
 	update		0
 }
@@ -1216,7 +1239,7 @@ Widget RES800x600 {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'585858'
 	width		90
-	height		15
+	height		20
 	align		'R'
 	update		0
 }
@@ -1227,7 +1250,7 @@ Widget RES1024x600 {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'585858'
 	width		100
-	height		15
+	height		20
 	align		'R'
 	update		0
 }
@@ -1379,19 +1402,19 @@ Layout Pearl_user {
 
 Layout Samsung800x600_user {
 	Layer 0 {
-		X001.Y001	'S800x600_BG1'
+		X1.Y1		'S800x600_BG1'
 	}
 	Layer 1 {
-		X017.Y001	'S_SERVICE2'
-		X017.Y200	'S_TIMER'
-		X017.Y325	'S_REC'
-		X017.Y415	'S_TS'
-		X017.Y475	'S_CI'
-		X017.Y560	'S_CAMD'
-		X017.Y710	'S_ECM'
-		X070.Y001	'S_LOGO'
-		X205.Y001	'S800_STRIPE'
-		X225.Y001	'S_EVENT'
+		X19.Y20		'S_SERVICE'
+		X17.Y200	'S_TIMER'
+		X17.Y325	'S_REC'
+		X17.Y415	'S_TS'
+		X17.Y475	'S_CI'
+		X17.Y560	'S_CAMD'
+		X17.Y710	'S_ECM'
+		X70.Y10		'S_LOGO'
+		X205.Y1		'S800_STRIPE'
+		X228.Y20	'S_EVENT'
 		X225.Y125	'S_TUNERTXT'
 		X220.Y220	'S_TUNERTXT3'
 		X225.Y270	'S_TUNERTXT1'
@@ -1402,57 +1425,60 @@ Layout Samsung800x600_user {
 		X222.Y662	'S_ASPECTRATIO'
 		X222.Y716	'S_DOLBY'
 		X222.Y755	'S_TXT'
-		X280.Y005	'S_TTF-EPG-NOW'
-		X350.Y006	'S_START'
-		X370.Y245	'S_DURATION_BJ1'
-		X370.Y335	'S_LEFT1'
-		X370.Y350	'S_DURATION_KPL1'
-		X370.Y440	'S_RIGHT1'
-		X370.Y455	'S_DURATION_BE1'
+		X265.Y1		'S800_STRIPE'
+		X280.Y5		'S_TTF-EPG-NOW'
+		X330.Y1		'S800_STRIPE'
+		X350.Y6		'S_START'
+		X343.Y250	'S_DURATION_BJ1'
+		X345.Y340	'S_LEFT1'
+		X343.Y360	'S_DURATION_KPL1'
+		X345.Y450	'S_RIGHT1'
+		X343.Y470	'S_DURATION_BE1'
 		X350.Y602	'S_END'
-		X420.Y005	'S_TTF-EPG-NEXT'
-		X470.Y001	'S800_STRIPE'
-		X483.Y001	'S_TIME'
-		X483.Y460	'ICON_WEATHER1'
+		X410.Y1		'S800_STRIPE'
+		X420.Y5		'S_TTF-EPG-NEXT'
+		X470.Y1		'S800_STRIPE'
+		X480.Y20	'S_TIME'
+		X480.Y460	'ICON_WEATHER1'
 		X479.Y380	'WEATHERICON_CURRENT'
 		X547.Y380	'TEMPERATURE_CURRENT1'
-		X508.Y500	'S2_WIND'
-		X553.Y440	'SS_WIND1'
+		X505.Y500	'S2_WIND'
+		X550.Y440	'SS_WIND1'
 		X479.Y640	'WEATHERICON_LATER'
 		X547.Y640	'TEMPERATURE_LATER1'
-		X500.Y032	'S_HOUR1_'
+		X500.Y35	'S_HOUR1_'
 		X500.Y100	'S_HOUR_1'
 		X500.Y173	'S_DP'
 		X500.Y200	'S_MIN1_'
-		X500.Y268	'S_MIN_1'
-		X585.Y001	'HST'
-		X585.Y710	'RES800x600'
+		X500.Y265	'S_MIN_1'
+		X580.Y5		'HST'
+		X580.Y700	'RES800x600'
 	}
 	Layer 2 {
-		X070.Y001	'S_SERVICE'
-		Row45.Col34	'S_EPGBAR'
+		X70.Y10		'S_TTF-CHANNEL'
+		Row50.Col34	'S_EPGBAR'
 	}
 	Layer 3 {
-		X353.Y199	'S_BAR'
-		X001.Y001	'S800x600_BG'
+		X393.Y199	'S_BAR'
+		X1.Y1		'S800x600_BG'
 	}
 }
 
 Layout Samsung800x480_user {
 	Layer 0 {
-		X001.Y001	'S800x480_BG1'
+		X1.Y1		'S800x480_BG1'
 	}
 	Layer 1 {
-		X017.Y001	'S_SERVICE2'
-		X017.Y200	'S_TIMER'
-		X017.Y325	'S_REC'
-		X017.Y415	'S_TS'
-		X017.Y475	'S_CI'
-		X017.Y560	'S_CAMD'
-		X017.Y710	'S_ECM'
-		X065.Y001	'S_LOGO'
-		X200.Y001	'S800_STRIPE'
-		X220.Y001	'S_EVENT'
+		X19.Y20		'S_SERVICE'
+		X17.Y200	'S_TIMER'
+		X17.Y325	'S_REC'
+		X17.Y415	'S_TS'
+		X17.Y475	'S_CI'
+		X17.Y560	'S_CAMD'
+		X17.Y710	'S_ECM'
+		X65.Y10		'S_LOGO'
+		X200.Y1		'S800_STRIPE'
+		X223.Y20	'S_EVENT'
 		X220.Y125	'S_TUNERTXT'
 		X215.Y220	'S_TUNERTXT3'
 		X220.Y270	'S_TUNERTXT1'
@@ -1463,43 +1489,46 @@ Layout Samsung800x480_user {
 		X217.Y662	'S_ASPECTRATIO'
 		X217.Y716	'S_DOLBY'
 		X217.Y755	'S_TXT'
-		X270.Y005	'S_TTF-EPG-NOW'
-		X340.Y006	'S_START'
-		X368.Y250	'S_DURATION_BJ1'
-		X368.Y340	'S_LEFT1'
-		X368.Y360	'S_DURATION_KPL1'
-		X368.Y450	'S_RIGHT1'
-		X368.Y470	'S_DURATION_BE1'
+		X255.Y1		'S800_STRIPE'
+		X270.Y5		'S_TTF-EPG-NOW'
+		X320.Y1		'S800_STRIPE'
+		X340.Y6		'S_START'
+		X338.Y250	'S_DURATION_BJ1'
+		X340.Y340	'S_LEFT1'
+		X338.Y360	'S_DURATION_KPL1'
+		X340.Y450	'S_RIGHT1'
+		X338.Y470	'S_DURATION_BE1'
 		X340.Y602	'S_END'
-		X410.Y005	'S_TTF-EPG-NEXT'
-		X465.Y001	'HST'
-		X465.Y710	'RES800x480'
+		X400.Y1		'S800_STRIPE'
+		X410.Y5		'S_TTF-EPG-NEXT'
+		X460.Y5		'HST'
+		X460.Y700	'RES800x480'
 	}
 	Layer 2 {
-		X070.Y001	'S_SERVICE'
-		Row45.Col34	'S_EPGBAR'
+		X70.Y10		'S_TTF-CHANNEL'
+		Row50.Col34	'S_EPGBAR'
 	}
 	Layer 3 {
-		X353.Y199	'S_BAR'
-		X001.Y001	'S800x480_BG'
+		X393.Y199	'S_BAR'
+		X1.Y1		'S800x480_BG'
 	}
 }
 
 Layout Samsung1024x600_user {
 	Layer 0 {
-		X001.Y001	'S1024x600_BG1'
+		X1.Y1		'S1024x600_BG1'
 	}
 	Layer 1 {
-		X013.Y001	'S_SERVICE2'
-		X013.Y330	'S_TIMER'
-		X013.Y475	'S_REC'
-		X013.Y585	'S_TS'
-		X013.Y665	'S_CI'
-		X013.Y770	'S_CAMD'
-		X013.Y930	'S_ECM'
-		X060.Y010	'S_LOGO1'
-		X205.Y001	'S1024_STRIPE'
-		X225.Y001	'S_EVENT'
+		X19.Y20		'S_SERVICE'
+		X13.Y330	'S_TIMER'
+		X13.Y475	'S_REC'
+		X13.Y585	'S_TS'
+		X13.Y665	'S_CI'
+		X13.Y770	'S_CAMD'
+		X13.Y930	'S_ECM'
+		X60.Y10		'S_LOGO1'
+		X205.Y1		'S1024_STRIPE'
+		X228.Y20	'S_EVENT'
 		X225.Y225	'S_TUNERTXT'
 		X220.Y320	'S_TUNERTXT3'
 		X225.Y390	'S_TUNERTXT1'
@@ -1510,39 +1539,42 @@ Layout Samsung1024x600_user {
 		X222.Y862	'S_ASPECTRATIO'
 		X222.Y916	'S_DOLBY'
 		X222.Y955	'S_TXT'
-		X280.Y005	'S_TTF-EPG-NOW1'
-		X350.Y006	'S_START'
-		X370.Y350	'S_DURATION_BJ1'
-		X370.Y440	'S_LEFT1'
-		X370.Y460	'S_DURATION_KPL1'
-		X370.Y550	'S_RIGHT1'
-		X370.Y570	'S_DURATION_BE1'
+		X265.Y1		'S1024_STRIPE'
+		X280.Y5		'S_TTF-EPG-NOW1'
+		X330.Y1		'S1024_STRIPE'
+		X350.Y6		'S_START'
+		X343.Y350	'S_DURATION_BJ1'
+		X345.Y440	'S_LEFT1'
+		X343.Y460	'S_DURATION_KPL1'
+		X345.Y550	'S_RIGHT1'
+		X343.Y570	'S_DURATION_BE1'
 		X350.Y828	'S_END'
-		X420.Y005	'S_TTF-EPG-NEXT1'
-		X470.Y001	'S1024_STRIPE'
-		X483.Y001	'S_TIME'
-		X483.Y660	'ICON_WEATHER1'
+		X410.Y1		'S1024_STRIPE'
+		X420.Y5		'S_TTF-EPG-NEXT1'
+		X470.Y1		'S1024_STRIPE'
+		X480.Y20	'S_TIME'
+		X480.Y660	'ICON_WEATHER1'
 		X479.Y580	'WEATHERICON_CURRENT'
 		X547.Y580	'TEMPERATURE_CURRENT1'
-		X508.Y700	'S2_WIND'
-		X553.Y640	'SS_WIND1'
+		X505.Y700	'S2_WIND'
+		X550.Y640	'SS_WIND1'
 		X479.Y840	'WEATHERICON_LATER'
 		X547.Y840	'TEMPERATURE_LATER1'
-		X500.Y032	'S_HOUR1_'
+		X500.Y35	'S_HOUR1_'
 		X500.Y100	'S_HOUR_1'
 		X500.Y173	'S_DP'
 		X500.Y200	'S_MIN1_'
-		X500.Y268	'S_MIN_1'
-		X585.Y001	'HST'
-		X585.Y924	'RES1024x600'
+		X500.Y265	'S_MIN_1'
+		X580.Y5		'HST'
+		X580.Y924	'RES1024x600'
 	}
 	Layer 2 {
-		X070.Y001	'S_SERVICE1'
-		Row45.Col34	'S_EPGBAR1'
+		X70.Y10		'S_TTF-CHANNEL'
+		Row50.Col34	'S_EPGBAR1'
 	}
 	Layer 3 {
-		X353.Y199	'S_BAR1'
-		X001.Y001	'S1024x600_BG'
+		X393.Y199	'S_BAR1'
+		X1.Y1		'S1024x600_BG'
 	}
 }
 
