@@ -603,19 +603,7 @@ Widget S_TIME {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'484848'
 	align		'L'
-	width		45
-	height		20
-	update		0
-	reload		1
-}
-
-Widget S_WEATHER {
-	class		'Truetype'
-	expression	'Weather'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'484848'
-	align		'L'
-	width		80
+	width		50
 	height		20
 	update		0
 	reload		1
@@ -1102,28 +1090,32 @@ Widget S_DURATION_KPL {
 	align		'C'
 }
 
-Widget S_LEFT {
-	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : '>'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'bbbbbb'
-	update		5000
+Widget S_LEFT1 {
+	class		'Image'
+	file		file::exist('/tmp/lcd/menu') == 1 ? '' : ICONS . 'left1.png'
+	update		4000
 	reload		1
-	width		30
-	height		35
-	align		'R'
 }
 
-Widget S_RIGHT {
-	class		'Truetype'
-	expression	file::exist('/tmp/lcd/menu') == 1 ? '' : '<'
-	font		file::readline('/tmp/lcd/font', 2)
-	fcolor		'bbbbbb'
-	update		5000
+Widget S_RIGHT1 {
+	class		'Image'
+	file		file::exist('/tmp/lcd/menu') == 1 ? '' : ICONS . 'right1.png'
+	update		4000
 	reload		1
-	width		30
-	height		35
-	align		'L'
+}
+
+Widget S_LEFT2 {
+	class		'Image'
+	file		file::exist('/tmp/lcd/menu') == 1 ? '' : ICONS . 'left2.png'
+	update		4000
+	reload		1
+}
+
+Widget S_RIGHT2 {
+	class		'Image'
+	file		file::exist('/tmp/lcd/menu') == 1 ? '' : ICONS . 'right2.png'
+	update		4000
+	reload		1
 }
 
 Widget S_DURATION_BJ1 {
@@ -1425,16 +1417,16 @@ Layout Samsung800x600_user {
 		X222.Y755	'S_TXT'
 		X280.Y005	'S_TTF-EPG-NOW'
 		X350.Y006	'S_START'
-		X370.Y235	'S_DURATION_BJ1'
-		X370.Y325	'S_LEFT'
-		X370.Y355	'S_DURATION_KPL1'
-		X370.Y445	'S_RIGHT'
-		X370.Y475	'S_DURATION_BE1'
+		X370.Y245	'S_DURATION_BJ1'
+		X370.Y335	'S_LEFT1'
+		X370.Y350	'S_DURATION_KPL1'
+		X370.Y440	'S_RIGHT1'
+		X370.Y455	'S_DURATION_BE1'
 		X350.Y602	'S_END'
 		X420.Y005	'S_TTF-EPG-NEXT'
 		X470.Y001	'S800_STRIPE'
 		X483.Y001	'S_TIME'
-		X483.Y500	'S_WEATHER'
+		X483.Y460	'ICON_WEATHER1'
 		X479.Y380	'WEATHERICON_CURRENT'
 		X547.Y380	'TEMPERATURE_CURRENT1'
 		X508.Y500	'S2_WIND'
@@ -1486,11 +1478,11 @@ Layout Samsung800x480_user {
 		X217.Y755	'S_TXT'
 		X270.Y005	'S_TTF-EPG-NOW'
 		X340.Y006	'S_START'
-		X368.Y240	'S_DURATION_BJ1'
-		X368.Y330	'S_LEFT'
+		X368.Y250	'S_DURATION_BJ1'
+		X368.Y340	'S_LEFT1'
 		X368.Y360	'S_DURATION_KPL1'
-		X368.Y450	'S_RIGHT'
-		X368.Y480	'S_DURATION_BE1'
+		X368.Y450	'S_RIGHT1'
+		X368.Y470	'S_DURATION_BE1'
 		X340.Y602	'S_END'
 		X410.Y005	'S_TTF-EPG-NEXT'
 		X465.Y001	'HST'
@@ -1533,16 +1525,16 @@ Layout Samsung1024x600_user {
 		X222.Y955	'S_TXT'
 		X280.Y005	'S_TTF-EPG-NOW1'
 		X350.Y006	'S_START'
-		X370.Y340	'S_DURATION_BJ1'
-		X370.Y430	'S_LEFT'
+		X370.Y350	'S_DURATION_BJ1'
+		X370.Y440	'S_LEFT1'
 		X370.Y460	'S_DURATION_KPL1'
-		X370.Y550	'S_RIGHT'
-		X370.Y580	'S_DURATION_BE1'
+		X370.Y550	'S_RIGHT1'
+		X370.Y570	'S_DURATION_BE1'
 		X350.Y828	'S_END'
 		X420.Y005	'S_TTF-EPG-NEXT1'
 		X470.Y001	'S1024_STRIPE'
 		X483.Y001	'S_TIME'
-		X483.Y700	'S_WEATHER'
+		X483.Y660	'ICON_WEATHER1'
 		X479.Y580	'WEATHERICON_CURRENT'
 		X547.Y580	'TEMPERATURE_CURRENT1'
 		X508.Y700	'S2_WIND'
