@@ -502,7 +502,7 @@ Widget SS_WIND {
 	expression	file::exist(FWEATHER) == 0 ? '' : round(substr(file::readline(W . 'wind', 1), 0, strstr(file::readline(W . 'wind', 1), '|'))). ' m/s'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget SS_WIND1 {
@@ -515,7 +515,7 @@ Widget SS_WIND1 {
 	expression	file::exist(FWEATHER) == 0 ? '' : round(substr(file::readline(W . 'wind', 1), 0, strstr(file::readline(W . 'wind', 1), '|'))*3.6). ' km/h'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget WEATHER_CITY1 {
@@ -528,7 +528,7 @@ Widget WEATHER_CITY1 {
 	expression	file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_city', 1)
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget WEATHERICON_CURRENT {
@@ -549,11 +549,12 @@ Widget WEATHERICON_LATER {
 
 Widget TEMPERATURE_CURRENT {
 	class		'Text'
-	expression	file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_temp', 1)
+	expression	file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_temp', 1) . '°'
 	align		'L'
 	width		3
 	update		10000
 	reload		1
+	DEBUGBORDER	D_B
 }
 
 Widget TEMPERATURE_CURRENT1 {
@@ -566,16 +567,17 @@ Widget TEMPERATURE_CURRENT1 {
 	expression	file::exist(FWEATHER) == 0 ? '' : file::readline('/tmp/lcd/weather_temp', 1) . '°'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget TEMPERATURE_LATER {
 	class		'Text'
-	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', strftime('%H', time()) < 16 ? 2 : 3); substr(TEMP, (strstr(TEMP, '|') + 1)))
+	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', strftime('%H', time()) < 16 ? 2 : 3); substr(TEMP, (strstr(TEMP, '|') + 1))) . '°'
 	align		'R'
 	width		3
 	update		10000
 	reload		1
+	DEBUGBORDER	D_B
 }
 
 Widget TEMPERATURE_LATER1 {
@@ -588,7 +590,7 @@ Widget TEMPERATURE_LATER1 {
 	expression	file::exist(FWEATHER) == 0 ? '' : (TEMP=file::readline('/tmp/lcd/weather_temp', strftime('%H', time()) < 16 ? 2 : 3); substr(TEMP, (strstr(TEMP, '|') + 1))) . '°'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 # --- OS/N/DOScam ----------------------------------------------------------- #
@@ -1337,7 +1339,7 @@ Widget S_TUNERTXT {
 	width		90
 	height		25
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TUNER {
@@ -1370,7 +1372,7 @@ Widget S_TUNERTXT1 {
 	width		60
 	height		25
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TUNER_SIG {
@@ -1383,7 +1385,7 @@ Widget S_TUNER_SIG {
 	width		80
 	height		30
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TUNERTXT2 {
@@ -1398,7 +1400,7 @@ Widget S_TUNERTXT2 {
 	width		60
 	height		25
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TUNER_SNR {
@@ -1411,7 +1413,7 @@ Widget S_TUNER_SNR {
 	width		80
 	height		30
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_REC {
@@ -1422,6 +1424,7 @@ Widget S_REC {
 	inverted	0
 	align		'R'
 	scale		300
+	DEBUGBORDER	D_B
 }
 
 Widget S_TS {
@@ -1501,7 +1504,7 @@ Widget S_TTF-CHANNEL {
 	width		800
 	height		108
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TTF-CHANNEL1 {
@@ -1514,7 +1517,7 @@ Widget S_TTF-CHANNEL1 {
 	width		1024
 	height		108
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_START {
@@ -1528,7 +1531,7 @@ Widget S_START {
 	align		'C'
 	update		3000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_END {
@@ -1542,7 +1545,7 @@ Widget S_END {
 	align		'C'
 	update		3000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TTF-EPG-NOW {
@@ -1557,7 +1560,7 @@ Widget S_TTF-EPG-NOW {
 	width		595
 	height		50
 	align		'L'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TTF-EPG-NOW1 {
@@ -1570,7 +1573,7 @@ Widget S_TTF-EPG-NOW1 {
 	width		819
 	height		50
 	align		'L'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TTF-EPG-NEXT {
@@ -1585,7 +1588,7 @@ Widget S_TTF-EPG-NEXT {
 	width		595
 	height		50
 	align		'L'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_TTF-EPG-NEXT1 {
@@ -1598,7 +1601,7 @@ Widget S_TTF-EPG-NEXT1 {
 	width		819
 	height		50
 	align		'L'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_DURATION {
@@ -1613,7 +1616,7 @@ Widget S_DURATION {
 	width		160
 	height		50
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_DURATION1 {
@@ -1626,7 +1629,7 @@ Widget S_DURATION1 {
 	width		160
 	height		50
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_DURATION_BJ {
@@ -1639,7 +1642,7 @@ Widget S_DURATION_BJ {
 	width		60
 	height		30
 	align		'R'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_DURATION_BE {
@@ -1652,7 +1655,7 @@ Widget S_DURATION_BE {
 	width		60
 	height		30
 	align		'L'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_DURATION_KPL {
@@ -1665,7 +1668,7 @@ Widget S_DURATION_KPL {
 	width		60
 	height		30
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_LEFT {
@@ -1678,7 +1681,7 @@ Widget S_LEFT {
 	width		20
 	height		30
 	align		'R'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_RIGHT {
@@ -1691,7 +1694,7 @@ Widget S_RIGHT {
 	width		20
 	height		30
 	align		'L'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_DURATION_BJ1 {
@@ -1704,7 +1707,7 @@ Widget S_DURATION_BJ1 {
 	width		90
 	height		40
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_DURATION_BE1 {
@@ -1717,7 +1720,7 @@ Widget S_DURATION_BE1 {
 	width		90
 	height		40
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_DURATION_KPL1 {
@@ -1730,7 +1733,7 @@ Widget S_DURATION_KPL1 {
 	width		90
 	height		40
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget S_EPGBAR {
@@ -1765,7 +1768,7 @@ Widget HST {
 	align		'L'
 	update		4000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget HST_STB {
@@ -1778,7 +1781,7 @@ Widget HST_STB {
 	align		'L'
 	update		0
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget RES320x240 {
@@ -1790,7 +1793,7 @@ Widget RES320x240 {
 	height		20
 	align		'R'
 	update		0
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget RES800x480 {
@@ -1802,7 +1805,7 @@ Widget RES800x480 {
 	height		20
 	align		'R'
 	update		0
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget RES800x600 {
@@ -1814,7 +1817,7 @@ Widget RES800x600 {
 	height		20
 	align		'R'
 	update		0
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget RES1024x600 {
@@ -1826,7 +1829,7 @@ Widget RES1024x600 {
 	height		20
 	align		'R'
 	update		0
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 # --- the digital clock ----------------------------------------------------- #
@@ -1922,7 +1925,7 @@ Widget TAGDATUM-TTF {
 	update		30000
 	reload		1
 	visible		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 Widget TAGDATUM-TTF1 {
@@ -1936,7 +1939,7 @@ Widget TAGDATUM-TTF1 {
 	update		30000
 	reload		1
 	visible		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	D_B
 }
 
 # --------------------------------------------------------------------------- #
@@ -2477,9 +2480,8 @@ Layout Samsung1024x600_standby {
 # --- General Settings ------------------------------------------------------ #
 
 Variables {
-	DEBUGBORDER	'/var/etc/.lcd-debugborder'
-	DB_ON		'ffff0000'		# debugborder on
-	DB_OFF		'ffff00ff'		# debugborder off
+	D_B1		'ffff0000'	#DEBUGBORDER ein
+	D_B		'ffff00ff'	#DEBUGBORDER aus
 	W		'/tmp/lcd/weather_'
 	W_ICON		'/share/lcd/icons/wind/'
 	ICONS		'/share/lcd/icons/'

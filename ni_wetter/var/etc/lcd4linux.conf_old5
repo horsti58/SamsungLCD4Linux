@@ -59,7 +59,7 @@ Widget Pearl_LOGO {
 	center		55
 	scale		100
 	width		320
-	height		55
+	height		60
 	reload		1
 }
 
@@ -71,8 +71,9 @@ Widget Pearl_SERVICE {
 	update		3000
 	align		'C'
 	width		320
-	height		55
+	height		60
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_EVENT {
@@ -85,6 +86,7 @@ Widget Pearl_EVENT {
 	height		36
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_PROGRESS {
@@ -106,9 +108,10 @@ Widget Pearl_START {
 	fcolor		'c4caca'	#RAL 7025 Lichtgrau
 	align		'L'
 	width		70
-	height		25
+	height		36
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_END {
@@ -118,9 +121,10 @@ Widget Pearl_END {
 	fcolor		'c4caca'	#RAL 7025 Lichtgrau
 	align		'R'
 	width		70
-	height		25
+	height		36
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_DURATION {
@@ -130,6 +134,7 @@ Widget Pearl_DURATION {
 	width		13
 	update		1000
 	foreground	'c4caca'	#RAL 7025 Lichtgrau
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_DURATION_BJ {
@@ -138,10 +143,11 @@ Widget Pearl_DURATION_BJ {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'f70000'	#RAL 3024 Leuchtrot
 	align		'R'
-	width		50
+	width		49
 	height		20
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_DURATION_BE {
@@ -154,6 +160,7 @@ Widget Pearl_DURATION_BE {
 	height		20
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_DURATION_KPL {
@@ -166,6 +173,7 @@ Widget Pearl_DURATION_KPL {
 	height		20
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_LEFT {
@@ -174,10 +182,11 @@ Widget Pearl_LEFT {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'c4caca'	#RAL 7025 Lichtgrau
 	align		'R'
-	width		20
-	height		25
+	width		15
+	height		20
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_RIGHT {
@@ -186,10 +195,11 @@ Widget Pearl_RIGHT {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'c4caca'	#RAL 7025 Lichtgrau
 	align		'L'
-	width		20
-	height		25
+	width		15
+	height		20
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_TIME {
@@ -198,10 +208,11 @@ Widget Pearl_TIME {
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'c4caca'	#RAL 7025 Lichtgrau
 	align		'C'
-	width		200
-	height		50
+	width		198
+	height		51
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 # --- general mode-icons ---------------------------------------------------- #
@@ -282,6 +293,7 @@ Widget Pearl_DURATION1 {
 	height		15
 	update		0
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_SERVICE1 {
@@ -294,6 +306,7 @@ Widget Pearl_SERVICE1 {
 	height		15
 	update		0
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_EVENT1 {
@@ -306,6 +319,7 @@ Widget Pearl_EVENT1 {
 	height		15
 	update		0
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_TIME1 {
@@ -318,6 +332,35 @@ Widget Pearl_TIME1 {
 	height		15
 	update		0
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
+}
+
+Widget Pearl_VOLUME {
+	class		'Truetype'
+	expression	'VOL:'
+	font		file::readline('/tmp/lcd/font', 2)
+	fcolor		'484b52'	#RAL 7024 Graphitgrau
+	align		'R'
+	width		40
+	height		15
+	update		0
+	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
+}
+
+Widget Pearl_VOLUME1 {
+	class		'Truetype'
+	expression	file::readline('/tmp/lcd/volume', 1)
+	font		file::readline('/tmp/lcd/font', 2)
+	fcolor		'ffffff00'	#RAL 9010 Reinweiß
+	update		3000
+	reload		1
+	inverted	0
+	size		0
+	width		40
+	height		20
+	align		'C'
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_HST {
@@ -330,6 +373,7 @@ Widget Pearl_HST {
 	align		'L'
 	update		4000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget Pearl_RES320x240 {
@@ -337,10 +381,11 @@ Widget Pearl_RES320x240 {
 	expression	file::readline('/usr/share/lcd/icons/spf.txt', 11)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'484b52'	#RAL 7024 Graphitgrau
-	width		65
+	width		60
 	height		15
 	align		'R'
 	update		0
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 # --- the background -------------------------------------------------------- #
@@ -394,6 +439,7 @@ Widget ICON_WEATHER {
 	file		file::exist(FWEATHER) == 0 ? '' : ICONS . 'mode/weather_on.png'
 	update		10000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget ICON_WEATHER1 {
@@ -402,6 +448,7 @@ Widget ICON_WEATHER1 {
 	update		10000
 	reload		1
 	scale		270
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget ICON_WEATHER2 {
@@ -410,6 +457,7 @@ Widget ICON_WEATHER2 {
 	update		10000
 	reload		1
 	scale		200
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_WIND {
@@ -418,6 +466,7 @@ Widget S_WIND {
 	update		4000
 	reload		1
 	align		'L'
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S1_WIND {
@@ -427,6 +476,7 @@ Widget S1_WIND {
 	reload		1
 	align		'L'
 	scale		20
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S2_WIND {
@@ -439,7 +489,7 @@ Widget S2_WIND {
 	align		'C'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget SS_WIND {
@@ -452,7 +502,7 @@ Widget SS_WIND {
 	align		'L'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget SS_WIND1 {
@@ -465,7 +515,7 @@ Widget SS_WIND1 {
 	align		'C'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget WEATHER_CITY1 {
@@ -478,7 +528,7 @@ Widget WEATHER_CITY1 {
 	align		'C'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget WEATHERICON_CURRENT {
@@ -487,6 +537,7 @@ Widget WEATHERICON_CURRENT {
 	update		10000
 	reload		1
 	scale		100
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget WEATHERICON_LATER {
@@ -495,6 +546,7 @@ Widget WEATHERICON_LATER {
 	update		10000
 	reload		1
 	scale		100
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget TEMPERATURE_CURRENT {
@@ -504,7 +556,7 @@ Widget TEMPERATURE_CURRENT {
 	width		3
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget TEMPERATURE_CURRENT1 {
@@ -517,7 +569,7 @@ Widget TEMPERATURE_CURRENT1 {
 	align		'C'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget TEMPERATURE_LATER {
@@ -527,7 +579,7 @@ Widget TEMPERATURE_LATER {
 	width		3
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget TEMPERATURE_LATER1 {
@@ -540,8 +592,9 @@ Widget TEMPERATURE_LATER1 {
 	align		'C'
 	update		10000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
+
 
 #--- 800x600 ----------------------------------------------------#
 
@@ -550,6 +603,7 @@ Widget S_BAR {
 	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'background/800x600/' . 'bar1.png' : ICONS . 'background/800x600/' . 'bar3.png'
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_BAR1 {
@@ -557,6 +611,7 @@ Widget S_BAR1 {
 	file		file::exist('/tmp/lcd/menu') == 1 ? ICONS . 'background/1024x600/' . 'bar1.png' : ICONS . 'background/1024x600/' . 'bar3.png'
 	update		5000
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S800_STRIPE {
@@ -564,6 +619,7 @@ Widget S800_STRIPE {
 	file		ICONS . 'background/800x600/' . 'stripe.png'
 	update		0
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S1024_STRIPE {
@@ -571,6 +627,7 @@ Widget S1024_STRIPE {
 	file		ICONS . 'background/1024x600/' . 'stripe.png'
 	update		0
 	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_SERVICE2 {
@@ -583,7 +640,7 @@ Widget S_SERVICE2 {
 	height		20
 	update		0
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_EVENT {
@@ -596,7 +653,7 @@ Widget S_EVENT {
 	height		20
 	update		0
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TIME {
@@ -609,7 +666,7 @@ Widget S_TIME {
 	height		20
 	update		0
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_WEATHER {
@@ -622,7 +679,35 @@ Widget S_WEATHER {
 	height		20
 	update		0
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
+}
+
+Widget S_VOLUME {
+	class		'Truetype'
+	expression	'VOL:'
+	font		file::readline('/tmp/lcd/font', 2)
+	fcolor		'484b52'	#RAL 7024 Graphitgrau
+	align		'L'
+	width		50
+	height		20
+	update		0
+	reload		1
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
+}
+
+Widget S_VOLUME1 {
+	class		'Truetype'
+	expression	file::readline('/tmp/lcd/volume', 1)
+	font		file::readline('/tmp/lcd/font', 2)
+	fcolor		'ffffff00'	#RAL 9010 Reinweiß
+	#update		3000
+	reload		1
+	inverted	0
+	size		0
+	width		60
+	height		40
+	align		'C'
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S800x600_STB {
@@ -743,6 +828,7 @@ Widget S_TIMER {
 	reload		1
 	align		'R'
 	scale		300
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_VFORMAT {
@@ -752,6 +838,7 @@ Widget S_VFORMAT {
 	reload		1
 	align		'R'
 	scale		150
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_ASPECTRATIO {
@@ -761,6 +848,7 @@ Widget S_ASPECTRATIO {
 	reload		1
 	align		'R'
 	scale		150
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_DOLBY {
@@ -770,6 +858,7 @@ Widget S_DOLBY {
 	reload		1
 	align		'R'
 	scale		150
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TXT {
@@ -779,6 +868,7 @@ Widget S_TXT {
 	reload		1
 	align		'R'
 	scale		150
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TUNERTXT {
@@ -793,7 +883,7 @@ Widget S_TUNERTXT {
 	width		90
 	height		20
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TUNERTXT3 {
@@ -808,7 +898,7 @@ Widget S_TUNERTXT3 {
 	width		35
 	height		40
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TUNERTXT1 {
@@ -823,7 +913,7 @@ Widget S_TUNERTXT1 {
 	width		60
 	height		20
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TUNER_SIG {
@@ -836,7 +926,7 @@ Widget S_TUNER_SIG {
 	width		85
 	height		40
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TUNERTXT2 {
@@ -851,7 +941,7 @@ Widget S_TUNERTXT2 {
 	width		60
 	height		20
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TUNER_SNR {
@@ -864,7 +954,7 @@ Widget S_TUNER_SNR {
 	width		85
 	height		40
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_REC {
@@ -931,6 +1021,7 @@ Widget S_LOGO {
 	width		780
 	height		108
 	#scale		270
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_LOGO1 {
@@ -942,6 +1033,7 @@ Widget S_LOGO1 {
 	width		1004
 	height		108
 	#scale		270
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_SERVICE {
@@ -954,7 +1046,7 @@ Widget S_SERVICE {
 	height		108
 	align		'C'
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_SERVICE1 {
@@ -967,7 +1059,7 @@ Widget S_SERVICE1 {
 	width		1024
 	height		108
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_START {
@@ -981,7 +1073,7 @@ Widget S_START {
 	align		'C'
 	update		3000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_END {
@@ -995,7 +1087,7 @@ Widget S_END {
 	align		'C'
 	update		3000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TTF-EPG-NOW {
@@ -1010,7 +1102,7 @@ Widget S_TTF-EPG-NOW {
 	width		800
 	height		60
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TTF-EPG-NOW1 {
@@ -1025,7 +1117,7 @@ Widget S_TTF-EPG-NOW1 {
 	width		1024
 	height		60
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TTF-EPG-NEXT {
@@ -1040,7 +1132,7 @@ Widget S_TTF-EPG-NEXT {
 	width		800
 	height		60
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_TTF-EPG-NEXT1 {
@@ -1055,7 +1147,7 @@ Widget S_TTF-EPG-NEXT1 {
 	width		1024
 	height		60
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_DURATION {
@@ -1070,7 +1162,7 @@ Widget S_DURATION {
 	width		160
 	height		50
 	align		'R'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_DURATION1 {
@@ -1083,7 +1175,7 @@ Widget S_DURATION1 {
 	width		160
 	height		40
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_LEFT {
@@ -1096,7 +1188,7 @@ Widget S_LEFT {
 	width		30
 	height		50
 	align		'R'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_RIGHT {
@@ -1109,7 +1201,7 @@ Widget S_RIGHT {
 	width		30
 	height		50
 	align		'L'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_DURATION_BJ1 {
@@ -1122,7 +1214,7 @@ Widget S_DURATION_BJ1 {
 	width		110
 	height		50
 	align		'R'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_DURATION_BE1 {
@@ -1135,7 +1227,7 @@ Widget S_DURATION_BE1 {
 	width		110
 	height		50
 	align		'L'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_DURATION_KPL1 {
@@ -1148,7 +1240,7 @@ Widget S_DURATION_KPL1 {
 	width		110
 	height		50
 	align		'C'
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_EPGBAR {
@@ -1160,6 +1252,7 @@ Widget S_EPGBAR {
 	update		5000
 	direction	'E'
 	foreground	'f70000'	#RAL 3024 Leuchtrot
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget S_EPGBAR1 {
@@ -1171,6 +1264,7 @@ Widget S_EPGBAR1 {
 	update		5000
 	direction	'E'
 	foreground	'f70000'	#RAL 3024 Leuchtrot
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget HST {
@@ -1178,12 +1272,12 @@ Widget HST {
 	expression	file::readline('/tmp/lcd/brightness', 1)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'484b52'	#RAL 7024 Graphitgrau
-	width		30
+	width		20
 	height		15
 	align		'L'
 	update		4000
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget HST_STB {
@@ -1196,7 +1290,7 @@ Widget HST_STB {
 	align		'L'
 	update		0
 	reload		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget RES320x240 {
@@ -1204,11 +1298,11 @@ Widget RES320x240 {
 	expression	file::readline('/usr/share/lcd/icons/spf.txt', 11)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'484b52'	#RAL 7024 Graphitgrau
-	width		80
+	width		70
 	height		15
 	align		'R'
 	update		0
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget RES800x480 {
@@ -1216,11 +1310,11 @@ Widget RES800x480 {
 	expression	file::readline('/usr/share/lcd/icons/spf.txt', 8)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'484b52'	#RAL 7024 Graphitgrau
-	width		80
+	width		70
 	height		15
 	align		'R'
 	update		0
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget RES800x600 {
@@ -1228,11 +1322,11 @@ Widget RES800x600 {
 	expression	file::readline('/usr/share/lcd/icons/spf.txt', 9)
 	font		file::readline('/tmp/lcd/font', 2)
 	fcolor		'484b52'	#RAL 7024 Graphitgrau
-	width		80
+	width		70
 	height		15
 	align		'R'
 	update		0
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget RES1024x600 {
@@ -1244,7 +1338,7 @@ Widget RES1024x600 {
 	height		15
 	align		'R'
 	update		0
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 # --- the digital clock ----------------------------------------------------- #
@@ -1340,7 +1434,7 @@ Widget TAGDATUM-TTF {
 	update		30000
 	reload		1
 	visible		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 Widget TAGDATUM-TTF1 {
@@ -1354,7 +1448,7 @@ Widget TAGDATUM-TTF1 {
 	update		30000
 	reload		1
 	visible		1
-	debugborder	file::exist(DEBUGBORDER) == 1 ? DB_ON : DB_OFF
+	DEBUGBORDER	file::readline('/tmp/lcd/volume', 1) eq '1' ? 'ffff0000' : 'ffff00ff'
 }
 
 # --------------------------------------------------------------------------- #
@@ -1371,27 +1465,32 @@ Layout Pearl_user {
 		x008.y217	'Pearl_ICON_TIMER'
 		x008.y258	'Pearl_ICON_REC'
 		x008.y289	'Pearl_ICON_TS'
-		x021.y001	'Pearl_LOGO'
+		x020.y001	'Pearl_LOGO'
 		x080.y001	'Pearl_STRIPE'
-		x090.y001	'Pearl_EVENT1'
+		x091.y001	'Pearl_EVENT1'
 		x105.y001	'Pearl_EVENT'
-		x145.y001	'Pearl_START'
-		x145.y250	'Pearl_END'
+		x141.y001	'Pearl_START'
+		x141.y250	'Pearl_END'
 		X149.Y079	'Pearl_BAR'
-		x158.y065	'Pearl_DURATION_BJ'
-		x158.y115	'Pearl_LEFT'
-		x158.y135	'Pearl_DURATION_KPL'
-		x158.y185	'Pearl_RIGHT'
-		x158.y205	'Pearl_DURATION_BE'
+		x157.y071	'Pearl_DURATION_BJ'
+		x157.y120	'Pearl_LEFT'
+		x157.y135	'Pearl_DURATION_KPL'
+		x157.y185	'Pearl_RIGHT'
+		x157.y200	'Pearl_DURATION_BE'
 		x177.y001	'Pearl_STRIPE'
-		x187.y001	'Pearl_TIME1'
-		x190.y065	'Pearl_TIME'
+		x189.y001	'Pearl_TIME1'
+		x189.y061	'Pearl_TIME'
+		x189.y280	'Pearl_VOLUME'
+		x205.y280	'Pearl_VOLUME1'
+
+
+
 		x225.y001	'Pearl_HST'
-		x225.y255	'Pearl_RES320x240'
+		x225.y260	'Pearl_RES320x240'
 	}
 	layer 2 {
 		x001.y001	'Pearl_BACKGROUND'
-		x021.y001	'Pearl_SERVICE'
+		x020.y001	'Pearl_SERVICE'
 	}
 }
 
@@ -1410,16 +1509,18 @@ Layout Samsung800x600_user {
 		X070.Y001	'S_LOGO'
 		X205.Y001	'S800_STRIPE'
 		X225.Y001	'S_EVENT'
-		X225.Y120	'S_TUNERTXT'
-		X220.Y220	'S_TUNERTXT3'
-		X225.Y270	'S_TUNERTXT1'
-		X220.Y340	'S_TUNER_SIG'
-		X225.Y440	'S_TUNERTXT2'
-		X220.Y510	'S_TUNER_SNR'
-		X222.Y623	'S_VFORMAT'
-		X222.Y662	'S_ASPECTRATIO'
-		X222.Y716	'S_DOLBY'
-		X222.Y755	'S_TXT'
+		X225.Y060	'S_VOLUME'
+		X220.Y110	'S_VOLUME1'
+		X225.Y180	'S_TUNERTXT'
+		X220.Y270	'S_TUNERTXT3'
+		X225.Y315	'S_TUNERTXT1'
+		X220.Y375	'S_TUNER_SIG'
+		X225.Y470	'S_TUNERTXT2'
+		X220.Y530	'S_TUNER_SNR'
+		X225.Y628	'S_VFORMAT'
+		X225.Y667	'S_ASPECTRATIO'
+		X225.Y721	'S_DOLBY'
+		X225.Y760	'S_TXT'
 		X270.Y001	'S_TTF-EPG-NOW'
 		X332.Y001	'S_START'
 		X362.Y210	'S_DURATION_BJ1'
@@ -1444,7 +1545,7 @@ Layout Samsung800x600_user {
 		X500.Y215	'S_MIN1_'
 		X500.Y283	'S_MIN_1'
 		X585.Y001	'HST'
-		X585.Y720	'RES800x600'
+		X585.Y730	'RES800x600'
 	}
 	Layer 2 {
 		X080.Y001	'S_SERVICE'
@@ -1491,7 +1592,7 @@ Layout Samsung800x480_user {
 		X325.Y605	'S_END'
 		X407.Y001	'S_TTF-EPG-NEXT'
 		X465.Y001	'HST'
-		X465.Y715	'RES800x480'
+		X465.Y730	'RES800x480'
 	}
 	Layer 2 {
 		X080.Y001	'S_SERVICE'
@@ -1567,9 +1668,8 @@ Layout Samsung1024x600_user {
 # --- General Settings ------------------------------------------------------ #
 
 Variables {
-	DEBUGBORDER	'/var/etc/.lcd-debugborder'
-	DB_ON		'ffff0000'		# debugborder on
-	DB_OFF		'ffff00ff'		# debugborder off
+	D_B1		'ffff0000'	#DEBUGBORDER ein
+	D_B		'ffff00ff'	#DEBUGBORDER aus
 	W		'/tmp/lcd/weather_'
 	W_ICON		'/share/lcd/icons/wind/'
 	ICONS		'/share/lcd/icons/'
